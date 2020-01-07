@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'vibez_icons.dart';
 import 'profile.dart';
 import 'home.dart';
+import 'share.dart';
+import 'discover.dart';
 
 void main() {
   runApp(new MyApp());
@@ -36,8 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     HomeWidget(),
-    HomeWidget(),
-    ProfileWidget(),
+    DiscoverWidget(),
+    ShareWidget(),
     ProfileWidget(),
     ProfileWidget(),
   ];

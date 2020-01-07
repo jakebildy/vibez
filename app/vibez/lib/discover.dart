@@ -1,16 +1,47 @@
 import 'package:flutter/material.dart';
 import 'vibez_icons.dart';
 
-class HomeWidget extends StatelessWidget {
+class DiscoverWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      return new Scaffold(
-        body:
-        new ListView(
-            children: <Widget>[
+    return new Scaffold(
+      body:
+      new ListView(
+          children: <Widget>[
+
+            new Card(key: null,
+                child:
+                new Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
 
 
+                      new Padding(
+                        padding: const EdgeInsets.all(10.0),
+                      ),
+
+                      new Icon(
+                          Icons.bubble_chart,
+                          size: 21.0),
+
+                      new Text(
+                        " Discover",
+                        style: new TextStyle(fontSize: 20.0,
+                            color: const Color(0xFF000000),
+                            fontWeight: FontWeight.w200,
+                            fontFamily: "Roboto"),
+                      ),
+
+                      new Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 90),
+                      ),
+
+                    ]
+
+                )),
             new Container(
               child:
               new Card(key: null,
@@ -86,7 +117,7 @@ class HomeWidget extends StatelessWidget {
                                 size: 27.0),
 
                             new Text(
-                            " 392 ",
+                              " 392 ",
                               style: new TextStyle(fontSize:20.0,
                                   color: const Color(0xFF000000),
                                   fontWeight: FontWeight.w400,
@@ -102,23 +133,23 @@ class HomeWidget extends StatelessWidget {
                           ]
 
                       ),
-                new Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      new Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                      ),
-                      new Text(
-                        "3 hours ago, at a party 🎉",
-                        style: new TextStyle(fontSize:20.0,
-                            color: const Color(0xFF000000),
-                            fontWeight: FontWeight.w200,
-                            fontFamily: "Roboto"),
-                      )
+                      new Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            new Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                            ),
+                            new Text(
+                              "3 hours ago, at a party 🎉",
+                              style: new TextStyle(fontSize:20.0,
+                                  color: const Color(0xFF000000),
+                                  fontWeight: FontWeight.w200,
+                                  fontFamily: "Roboto"),
+                            )
 
-                      ])
+                          ])
                     ]
 
                 ),
@@ -250,8 +281,8 @@ class HomeWidget extends StatelessWidget {
               width: 1.7976931348623157e+308,
               height: 450.0,
             )
-        ]),
+          ]),
 
-      );
-    }
+    );
   }
+}
