@@ -15,7 +15,7 @@ class ProfileWidget extends StatelessWidget {
 
 
               new Card(key: null,
-                  elevation: 0,
+                  color: Color(0xFFfafafa),
     child:
               new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
