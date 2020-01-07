@@ -13,9 +13,9 @@ class ProfileWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
 
-              new Padding(
-                padding: const EdgeInsets.all(13.0),
-              ),
+
+              new Card(key: null,
+    child:
               new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
@@ -37,11 +37,14 @@ class ProfileWidget extends StatelessWidget {
 
                     new Icon(
                         Icons.verified_user,
-                        color: const Color(0xFF00a5b4),
-                        size: 21.0)
+                        color: const Color(0xFF2cb3fb),
+                        size: 21.0),
+                    new Padding(
+                      padding: const EdgeInsets.all(24.0),
+                    ),
                   ]
 
-              ),
+              )),
               new Padding(
                 padding: const EdgeInsets.all(10.0),
               ),
@@ -53,7 +56,7 @@ class ProfileWidget extends StatelessWidget {
 
 
                     new Padding(
-                      padding: const EdgeInsets.all(24.0),
+                      padding: const EdgeInsets.all(14.0),
                     ),
 
                     new Image.network(
@@ -110,14 +113,17 @@ class ProfileWidget extends StatelessWidget {
                                 color: const Color(0xFF000000),
                                 fontWeight: FontWeight.w200,
                                 fontFamily: "Roboto"),
-                          )
+                          ),
+
                         ]
 
                     ),
-
                     new Padding(
-                      padding: const EdgeInsets.all(24.0),
-                    )
+                      padding: const EdgeInsets.all(14.0),
+                    ),
+
+
+
                   ]
 
               ),
@@ -126,7 +132,7 @@ class ProfileWidget extends StatelessWidget {
                 padding: const EdgeInsets.all(6),
               ),
               new Text(
-                "Jake Bildy • London, ON 🇨🇦 ",
+                "Jake Bildy",
                 style: new TextStyle(fontSize: 16.0,
                     color: const Color(0xFF000000),
                     fontWeight: FontWeight.w400,
@@ -142,7 +148,7 @@ class ProfileWidget extends StatelessWidget {
               ),
 
               new Padding(
-                padding: const EdgeInsets.all(15.1),
+                padding: const EdgeInsets.all(8.1),
               ),
 
               new Text(
@@ -152,17 +158,13 @@ class ProfileWidget extends StatelessWidget {
                     fontWeight: FontWeight.w300,
                     fontFamily: "Roboto"),
               ),
-
-              new Container(
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(color: Colors.black,width: 3.0),
-                  ),
-                ),
-              ),
-
-
-
+    new Card(key: null,
+    child:
+    new Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    mainAxisSize: MainAxisSize.max,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: <Widget>[
 
               new Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -172,22 +174,22 @@ class ProfileWidget extends StatelessWidget {
                     new Image.network(
                       'https://static.stereogum.com/uploads/2015/03/tame-impala_let-it-happen-360x360.jpg',
                       fit: BoxFit.fill,
-                      width: 136.5,
-                      height: 136.5,
+                      width: 134.4,
+                      height: 134.4,
                     ),
 
                     new Image.network(
                       'https://upload.wikimedia.org/wikipedia/en/c/c9/Phil_Collins_InTheAirTonight.jpg',
                       fit: BoxFit.fill,
-                      width: 136.5,
-                      height: 136.5,
+                      width: 134.4,
+                      height: 134.4,
                     ),
 
                     new Image.network(
                       'https://upload.wikimedia.org/wikipedia/en/e/e1/93tilinfinity.jpg',
                       fit: BoxFit.fill,
-                      width: 136.5,
-                      height: 136.5,
+                      width: 134.4,
+                      height: 134.4,
                     )
                   ]
 
@@ -201,22 +203,22 @@ class ProfileWidget extends StatelessWidget {
                     new Image.network(
                       'https://upload.wikimedia.org/wikipedia/en/thumb/5/50/Sgt._Pepper%27s_Lonely_Hearts_Club_Band.jpg/220px-Sgt._Pepper%27s_Lonely_Hearts_Club_Band.jpg',
                       fit: BoxFit.fill,
-                      width: 136.5,
-                      height: 136.5,
+                      width: 134.4,
+                      height: 134.4,
                     ),
 
                     new Image.network(
                       'https://upload.wikimedia.org/wikipedia/en/thumb/2/27/IllmaticNas.jpg/220px-IllmaticNas.jpg',
                       fit: BoxFit.fill,
-                      width: 136.5,
-                      height: 136.5,
+                      width: 134.4,
+                      height: 134.4,
                     ),
 
                     new Image.network(
                       'https://mm.aiircdn.com/5/5ba3db1f638a5.jpg',
                       fit: BoxFit.fill,
-                      width: 136.5,
-                      height: 136.5,
+                      width: 134.4,
+                      height: 134.4,
                     )
                   ]
 
@@ -230,27 +232,28 @@ class ProfileWidget extends StatelessWidget {
                     new Image.network(
                       'https://consequenceofsound.net/wp-content/uploads/2019/08/Metallica-Black-Album.jpg?quality=80&w=807',
                       fit: BoxFit.fill,
-                      width: 136.5,
-                      height: 136.5,
+                      width: 134.4,
+                      height: 134.4,
                     ),
 
                     new Image.network(
                       'https://art.pixilart.com/2b9b2310a92619b.png',
                       fit: BoxFit.fill,
-                      width: 136.5,
-                      height: 136.5,
+                      width: 134.4,
+                      height: 134.4,
                     ),
 
                     new Image.network(
                       'https://upload.wikimedia.org/wikipedia/en/thumb/a/a3/Tha-doggfather.jpg/220px-Tha-doggfather.jpg',
                       fit: BoxFit.fill,
-                      width: 136.5,
-                      height: 136.5,
+                      width: 134.4,
+                      height: 134.4,
                     )
                   ]
 
               ),
+
             ]
 
-        ));
+        ))]));
   }}

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'vibez_icons.dart';
 import 'profile.dart';
+import 'home.dart';
 
 void main() {
   runApp(new MyApp());
@@ -34,8 +35,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   int _currentIndex = 0;
   final List<Widget> _children = [
-    FeedWidget(),
-    FeedWidget(),
+    HomeWidget(),
+    HomeWidget(),
     ProfileWidget(),
     ProfileWidget(),
     ProfileWidget(),
@@ -86,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             new BottomNavigationBarItem(
               icon: const Icon(Vibez.fire_button),
-              title: new Text('Favorites'),
+              title: new Text('Activity'),
             ),
 
             new BottomNavigationBarItem(
@@ -150,74 +151,4 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 }
-
-class FeedWidget extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return new Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        mainAxisSize: MainAxisSize.max,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-
-          new Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                new Icon(
-                    Icons.camera,
-                    color: const Color(0xFF000000),
-                    size: 77.0),
-
-                new Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      new Text(
-                        "Person Name",
-                        style: new TextStyle(fontSize:15.0,
-                            color: const Color(0xFF000000),
-                            fontWeight: FontWeight.w500,
-                            fontFamily: "Roboto"),
-                      ),
-
-                      new Text(
-                        "This is the description",
-                        style: new TextStyle(fontSize:15.0,
-                            color: const Color(0xFF000000),
-                            fontWeight: FontWeight.w200,
-                            fontFamily: "Roboto"),
-                      ),
-
-                      new Text(
-                        "🇨🇦  London, ON",
-                        style: new TextStyle(fontSize:15.0,
-                            color: const Color(0xFF000000),
-                            fontWeight: FontWeight.w200,
-                            fontFamily: "Roboto"),
-                      ),
-
-                      new Text(
-                        "🎶In The Air Tonight - Phil Collins",
-                        style: new TextStyle(fontSize:14.0,
-                            color: const Color(0xFF000000),
-                            fontWeight: FontWeight.w200,
-                            fontFamily: "Roboto"),
-                      )
-                    ]
-
-                )
-              ]
-
-          )
-        ]
-
-    );
-
-  }
-}
-
 
