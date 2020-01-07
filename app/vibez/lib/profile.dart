@@ -166,13 +166,26 @@ class ProfileWidget extends StatelessWidget {
                 padding: const EdgeInsets.all(8.1),
               ),
 
+        new Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+
+
+              new Icon(
+                  Vibez.fire_button,
+                  size: 21.0),
+
               new Text(
-                "Top 6",
+                " Top 6",
                 style: new TextStyle(fontSize: 16.0,
                     color: const Color(0xFF000000),
-                    fontWeight: FontWeight.w300,
+                    fontWeight: FontWeight.w400,
                     fontFamily: "Roboto"),
               ),
+
+            ]),
     new Card(key: null,
     child:
 
