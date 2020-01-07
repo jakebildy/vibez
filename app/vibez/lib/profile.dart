@@ -15,6 +15,7 @@ class ProfileWidget extends StatelessWidget {
 
 
               new Card(key: null,
+                  elevation: 0,
     child:
               new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -40,31 +41,60 @@ class ProfileWidget extends StatelessWidget {
                         color: const Color(0xFF2cb3fb),
                         size: 21.0),
                     new Padding(
-                      padding: const EdgeInsets.all(24.0),
+                      padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 90),
                     ),
+                    new OutlineButton(
+                        child: new Text("Edit Profile"),
+                        onPressed: null,
+                        shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0))
+                    )
                   ]
 
               )),
               new Padding(
+                padding: const EdgeInsets.all(5.0),
+              ),
+        new Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+
+
+              new Image.network(
+                'https://i.imgur.com/0O7yjDV.png',
+                fit: BoxFit.fill,
+                width: 100.0,
+                height: 100.0,
+              ),]),
+              new Text(
+                "Jake Bildy",
+                style: new TextStyle(fontSize: 16.0,
+                    color: const Color(0xFF000000),
+                    fontWeight: FontWeight.w400,
+                    fontFamily: "Roboto"),
+              ),
+
+              new Text(
+                "Bios are for people who need an explanation",
+                style: new TextStyle(fontSize: 16.0,
+                    color: const Color(0xFF000000),
+                    fontWeight: FontWeight.w200,
+                    fontFamily: "Roboto"),
+              ),
+
+              new Padding(
                 padding: const EdgeInsets.all(10.0),
               ),
+
               new Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
 
 
-                    new Padding(
-                      padding: const EdgeInsets.all(14.0),
-                    ),
 
-                    new Image.network(
-                      'https://i.imgur.com/0O7yjDV.png',
-                      fit: BoxFit.fill,
-                      width: 100.0,
-                      height: 100.0,
-                    ),
                     new Padding(
                       padding: const EdgeInsets.all(14.0),
                     ),
@@ -129,22 +159,7 @@ class ProfileWidget extends StatelessWidget {
               ),
 
               new Padding(
-                padding: const EdgeInsets.all(6),
-              ),
-              new Text(
-                "Jake Bildy",
-                style: new TextStyle(fontSize: 16.0,
-                    color: const Color(0xFF000000),
-                    fontWeight: FontWeight.w400,
-                    fontFamily: "Roboto"),
-              ),
-
-              new Text(
-                "Bios are for people who need an explanation",
-                style: new TextStyle(fontSize: 16.0,
-                    color: const Color(0xFF000000),
-                    fontWeight: FontWeight.w200,
-                    fontFamily: "Roboto"),
+                padding: const EdgeInsets.all(16),
               ),
 
               new Padding(
@@ -152,7 +167,7 @@ class ProfileWidget extends StatelessWidget {
               ),
 
               new Text(
-                "Top 9",
+                "Top 6",
                 style: new TextStyle(fontSize: 16.0,
                     color: const Color(0xFF000000),
                     fontWeight: FontWeight.w300,
@@ -160,6 +175,7 @@ class ProfileWidget extends StatelessWidget {
               ),
     new Card(key: null,
     child:
+
     new Column(
     mainAxisAlignment: MainAxisAlignment.start,
     mainAxisSize: MainAxisSize.max,
@@ -224,34 +240,6 @@ class ProfileWidget extends StatelessWidget {
 
               ),
 
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Image.network(
-                      'https://consequenceofsound.net/wp-content/uploads/2019/08/Metallica-Black-Album.jpg?quality=80&w=807',
-                      fit: BoxFit.fill,
-                      width: 134.4,
-                      height: 134.4,
-                    ),
-
-                    new Image.network(
-                      'https://art.pixilart.com/2b9b2310a92619b.png',
-                      fit: BoxFit.fill,
-                      width: 134.4,
-                      height: 134.4,
-                    ),
-
-                    new Image.network(
-                      'https://upload.wikimedia.org/wikipedia/en/thumb/a/a3/Tha-doggfather.jpg/220px-Tha-doggfather.jpg',
-                      fit: BoxFit.fill,
-                      width: 134.4,
-                      height: 134.4,
-                    )
-                  ]
-
-              ),
 
             ]
 
