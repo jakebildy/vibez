@@ -8,6 +8,7 @@ import 'activity.dart';
 import 'package:badges/badges.dart';
 
 void main() {
+  
   runApp(new MyApp());
 }
 class MyApp extends StatelessWidget {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'vibez_icons.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class ShareWidget extends StatelessWidget {
 
@@ -94,14 +95,13 @@ class ShareWidget extends StatelessWidget {
                           ]
 
                       ),
-
-                      new Image.network(
-                        'https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif',
-                        fit:BoxFit.fill,
-                        width: 300.0,
-                        height: 300.0,
+                      new Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 48.0, horizontal: 124.0),
                       ),
-
+                      new SpinKitThreeBounce(color: Colors.pinkAccent, size: 40),
+                      new Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 48.0, horizontal: 124.0),
+                      ),
                       new Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           mainAxisSize: MainAxisSize.max,
@@ -112,20 +112,7 @@ class ShareWidget extends StatelessWidget {
                             ),
 
 
-                            new Text(
-                              " ?? ",
-                              style: new TextStyle(fontSize:20.0,
-                                  color: const Color(0xFF000000),
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: "Roboto"),
-                            ),
-                            new Text(
-                              "people like this",
-                              style: new TextStyle(fontSize:20.0,
-                                  color: const Color(0xFF000000),
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: "Roboto"),
-                            )
+
                           ]
 
                       ),
@@ -184,7 +171,9 @@ class ShareWidget extends StatelessWidget {
                 onPressed: null,
                 shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0))
             ),
-    ])
+
+    ]),
+
           ]),
 
     );
