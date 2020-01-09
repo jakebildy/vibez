@@ -128,7 +128,7 @@ class HomeWidget extends StatelessWidget {
               padding: const EdgeInsets.all(0.0),
               alignment: Alignment.center,
               width: 1.7976931348623157e+308,
-              height: 450.0,
+              height: 690.0,
             ),
 
 
@@ -248,7 +248,7 @@ class HomeWidget extends StatelessWidget {
               padding: const EdgeInsets.all(0.0),
               alignment: Alignment.center,
               width: 1.7976931348623157e+308,
-              height: 450.0,
+              height: 690.0,
             )
         ]),
 

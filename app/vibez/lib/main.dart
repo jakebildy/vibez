@@ -4,6 +4,8 @@ import 'profile.dart';
 import 'home.dart';
 import 'share.dart';
 import 'discover.dart';
+import 'activity.dart';
+import 'package:badges/badges.dart';
 
 void main() {
   runApp(new MyApp());
@@ -40,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
     HomeWidget(),
     DiscoverWidget(),
     ShareWidget(),
-    ProfileWidget(),
+    ActivityWidget(),
     ProfileWidget(),
   ];
 
@@ -88,7 +90,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             new BottomNavigationBarItem(
-              icon: const Icon(Vibez.fire_button),
+              icon: Badge(
+                badgeContent: Text('3', style: TextStyle(color: Colors.white)),
+                child: Icon(
+                  Vibez.fire_button,
+                  // color: green,
+                ),
+              ),
               title: new Text('Activity'),
             ),
 

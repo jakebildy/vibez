@@ -61,7 +61,7 @@ class DiscoverWidget extends StatelessWidget {
                               padding: const EdgeInsets.all(14.0),
                             ),
                             new Image.network(
-                              'https://i.imgur.com/0O7yjDV.png',
+                              'https://i.imgur.com/Kgs0tRE.png',
                               fit:BoxFit.fill,
                               width: 100.0,
                               height: 100.0,
