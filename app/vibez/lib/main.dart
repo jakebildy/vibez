@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             new BottomNavigationBarItem(
               icon: const Icon(Icons.bubble_chart),
-              title: new Text('Discover'),
+              title: new Text('Vibe'),
             ),
 
             new BottomNavigationBarItem(
@@ -109,9 +109,9 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(60.0),
           child: AppBar(
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.black,
             iconTheme: Theme.of(context).primaryIconTheme.copyWith(
-                color: Colors.black
+                color: Colors.white
 
             ),
               actions: <Widget>[
@@ -132,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Container(
                     padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0), child:  new Image.network(
-            'https://i.imgur.com/VeP70w1.png',
+            'https://i.imgur.com/lsH8FH9.png',
             fit:BoxFit.fitWidth,
             width: 130.0,
             height: 130.0,
