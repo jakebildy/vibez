@@ -6,6 +6,7 @@ import 'share.dart';
 import 'discover.dart';
 import 'activity.dart';
 import 'package:badges/badges.dart';
+import 'util.dart';
 
 void main() {
 
@@ -44,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
     DiscoverWidget(),
     ShareWidget(),
     ActivityWidget(),
-    ProfileWidget(),
+    ProfileWidget(username: "jake"),
   ];
 
   @override
@@ -132,14 +133,10 @@ class _MyHomePageState extends State<MyHomePage> {
           },
         ),
 
+        AccountMenu(),
 
 
-          IconButton(
-            icon: Icon(Icons.more_vert),
-            onPressed: () {
-            },
-          ),
-              ],
+          ],
             title: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -211,13 +208,8 @@ class DataSearch extends SearchDelegate<String>{
   @override
   Widget buildResults(BuildContext context) {
     // show some result based on the selection
-    return Container(
-      height: 100,
-      width: 100,
-      child: Card(
-        child: Text(query)
-      )
-    );
+    return ProfileWidget(username: query);
+
   }
 
   @override

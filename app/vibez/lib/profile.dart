@@ -3,6 +3,14 @@ import 'vibez_icons.dart';
 
 class ProfileWidget extends StatelessWidget {
 
+  final String username;
+
+  ProfileWidget({
+    String username
+  }): this.username = username;
+
+
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -68,7 +76,7 @@ class ProfileWidget extends StatelessWidget {
                 height: 100.0,
               ),]),
               new Text(
-                "Jake Bildy",
+                username,
                 style: new TextStyle(fontSize: 16.0,
                     color: const Color(0xFF000000),
                     fontWeight: FontWeight.w400,
