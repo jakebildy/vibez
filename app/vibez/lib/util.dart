@@ -10,10 +10,11 @@ class PostWidget extends StatelessWidget {
   final String username;
   final String likeCount;
   final String description;
+  final String songName;
 
   PostWidget({
-    String username, likeCount, description
-  }): this.username = username, this.likeCount = likeCount, this.description = description;
+    String username, likeCount, description, songName
+  }): this.username = username, this.likeCount = likeCount, this.description = description, this.songName = songName;
 
 
 
@@ -23,6 +24,7 @@ class PostWidget extends StatelessWidget {
     return new Container(
       child:
       new Card(key: null,
+        color:  const Color(0xFF000000),
         child:
         new Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -39,7 +41,7 @@ class PostWidget extends StatelessWidget {
                     ),
 
                     new Image.network(
-                      'https://i.imgur.com/0O7yjDV.png',
+                      'https://i.imgur.com/Kgs0tRE.png',
                       fit: BoxFit.fill,
                       width: 40.0,
                       height: 40.0,
@@ -51,7 +53,7 @@ class PostWidget extends StatelessWidget {
                     new Text(
                       username,
                       style: new TextStyle(fontSize:17.0,
-                          color: const Color(0xFF000000),
+                          color: const Color(0xFFFFFFFF),
                           fontWeight: FontWeight.w400,
                           fontFamily: "Roboto"),
                     ),
@@ -62,7 +64,16 @@ class PostWidget extends StatelessWidget {
                         Icons.verified_user,
                         color: const Color(0xFF2cb3fb),
                         size: 23.0),
-
+                    new Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                    ),
+                    new Text(
+                      description,
+                      style: new TextStyle(fontSize:17.0,
+                          color: const Color(0xFFFFFFFF),
+                          fontWeight: FontWeight.w400,
+                          fontFamily: "Roboto"),
+                    ),
                   ]
 
               ),
@@ -75,8 +86,29 @@ class PostWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
               new Padding(
-                padding: const EdgeInsets.all(265.0),
+                padding: const EdgeInsets.all(20.0),
               ),
+
+              new Padding(
+                padding: const EdgeInsets.all(255.0),
+              ),
+              new Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    new Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                    ),
+                    new Text(
+                      songName,
+                      style: new TextStyle(fontSize:20.0,
+                          color: const Color(0xFFFFFFFF),
+                          fontWeight: FontWeight.w400,
+                          fontFamily: "Roboto"),
+                    ),
+
+                  ]),
               new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
@@ -88,43 +120,27 @@ class PostWidget extends StatelessWidget {
 
                     new Icon(
                         Vibez.fire_button,
-                        color: const Color(0xFF000000),
+                        color: const Color(0xFFFFFFFF),
                         size: 27.0),
 
                     new Text(
                       " " + likeCount + " ",
                       style: new TextStyle(fontSize:20.0,
-                          color: const Color(0xFF000000),
-                          fontWeight: FontWeight.w400,
+                          color: const Color(0xFFFFFFFF),
+                          fontWeight: FontWeight.w300,
                           fontFamily: "Roboto"),
                     ),
                     new Text(
                       "people liked this",
                       style: new TextStyle(fontSize:20.0,
-                          color: const Color(0xFF000000),
-                          fontWeight: FontWeight.w400,
+                          color: const Color(0xFFFFFFFF),
+                          fontWeight: FontWeight.w300,
                           fontFamily: "Roboto"),
                     )
                   ]
 
               ),
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                    ),
-                    new Text(
-                      description,
-                      style: new TextStyle(fontSize:20.0,
-                          color: const Color(0xFF000000),
-                          fontWeight: FontWeight.w200,
-                          fontFamily: "Roboto"),
-                    ),
 
-                    ]),
                   ]),
 
                 ])
@@ -197,8 +213,8 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     // Create an store the VideoPlayerController. The VideoPlayerController
     // offers several different constructors to play videos from assets, files,
     // or the internet.
-    _controller = VideoPlayerController.network(
-      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+    _controller = VideoPlayerController.asset(
+      'assets/phil.mp4',
     );
 
     _initializeVideoPlayerFuture = _controller.initialize();
