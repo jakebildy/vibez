@@ -73,7 +73,7 @@ class DiscoverWidget extends StatelessWidget {
                             new Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   new Padding(
                                     padding: const EdgeInsets.all(24.0),
@@ -84,6 +84,7 @@ class DiscoverWidget extends StatelessWidget {
                                       mainAxisSize: MainAxisSize.min,
                                       crossAxisAlignment: CrossAxisAlignment.center,
                                       children: <Widget>[
+
                                         new Text(
                                           "Jake",
                                           style: new TextStyle(fontSize:22.0,
@@ -95,11 +96,33 @@ class DiscoverWidget extends StatelessWidget {
                                         new Icon(
                                             Icons.verified_user,
                                             color: const Color(0xFF2cb3fb),
-                                            size: 29.0)
+                                            size: 29.0),
+
+                                        new Padding(
+                                          padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 40.0),
+                                        ),
+
+                                        new Text(
+                                          "324",
+                                          style: new TextStyle(fontSize:24.0,
+                                              color: const Color(0xFF000000),
+                                              fontWeight: FontWeight.w200,
+                                              fontFamily: "Roboto"),
+                                        ),
+
+
+                                        new Icon(
+                                            Vibez.fire_button,
+                                            color: const Color(0xFF000000),
+                                            size: 24.0),
+
+
                                       ]
 
                                   ),
-
+                                  new Padding(
+                                    padding: const EdgeInsets.all(2.0),
+                                  ),
                                   new Text(
                                     "London, ON",
                                     style: new TextStyle(fontSize:16.0,
@@ -107,7 +130,16 @@ class DiscoverWidget extends StatelessWidget {
                                         fontWeight: FontWeight.w200,
                                         fontFamily: "Roboto"),
                                   ),
-
+                                  new Padding(
+                                    padding: const EdgeInsets.all(2.0),
+                                  ),
+                                  new Text(
+                                    "Phil Collins - In The Air Tonight",
+                                    style: new TextStyle(fontSize:16.0,
+                                        color: const Color(0xFF000000),
+                                        fontWeight: FontWeight.w200,
+                                        fontFamily: "Roboto"),
+                                  ),
                                   new Padding(
                                     padding: const EdgeInsets.all(24.0),
                                   )
@@ -115,28 +147,8 @@ class DiscoverWidget extends StatelessWidget {
 
                             ),
 
-                            new Padding(
-                              padding: const EdgeInsets.all(24.0),
-                            ),
-
-                            new Text(
-                              "324",
-                              style: new TextStyle(fontSize:24.0,
-                                  color: const Color(0xFF000000),
-                                  fontWeight: FontWeight.w200,
-                                  fontFamily: "Roboto"),
-                            ),
 
 
-                            new Icon(
-                                Vibez.fire_button,
-                                color: const Color(0xFF000000),
-                                size: 24.0),
-
-
-                            new Padding(
-                              padding: const EdgeInsets.all(24.0),
-                            )
                           ]
 
                       )
