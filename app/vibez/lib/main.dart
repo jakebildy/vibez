@@ -8,7 +8,7 @@ import 'activity.dart';
 import 'package:badges/badges.dart';
 
 void main() {
-  
+
   runApp(new MyApp());
 }
 class MyApp extends StatelessWidget {
@@ -128,8 +128,12 @@ class _MyHomePageState extends State<MyHomePage> {
           IconButton(
           icon: Icon(Icons.search),
           onPressed: () {
+            showSearch(context: context, delegate: DataSearch());
           },
         ),
+
+
+
           IconButton(
             icon: Icon(Icons.more_vert),
             onPressed: () {
@@ -161,5 +165,90 @@ class _MyHomePageState extends State<MyHomePage> {
       _currentIndex = index;
     });
   }
+}
+
+
+class DataSearch extends SearchDelegate<String>{
+
+  final users = [
+    "jake",
+    "hayden",
+    "snoop",
+    "chuck_testa",
+    "harambe",
+    "dumbledore",
+    "gandalf",
+    "smeagol",
+    "legolas",
+    "luke_skywalker"
+  ];
+
+  final recentUsers = [
+    "snoop",
+    "harambe"
+  ];
+
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    // actions for app bar
+    return [IconButton(icon: Icon(Icons.clear), onPressed: () {
+      query = "";
+    })];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    // leading icon on the right of the app bar
+    return IconButton(
+        icon: AnimatedIcon(
+            icon: AnimatedIcons.menu_arrow,
+            progress: transitionAnimation,
+        ), onPressed: (){
+          close(context, null);
+        });
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    // show some result based on the selection
+    return Container(
+      height: 100,
+      width: 100,
+      child: Card(
+        child: Text(query)
+      )
+    );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+
+    final suggestionList = query.isEmpty?recentUsers : users.where((p)=>p.startsWith(query)) .toList();
+
+
+
+    return ListView.builder(itemBuilder: (context, index)=>ListTile(
+
+      onTap: () {
+        showResults(context);
+      },
+
+      leading: Icon(Icons.person),
+      title : RichText(text: TextSpan(
+        text: suggestionList[index].substring(0,query.length),
+        style: TextStyle(color: Colors.black, fontWeight : FontWeight.bold),
+      children: [TextSpan(
+        text: suggestionList[index].substring(query.length),
+        style: TextStyle(color: Colors.grey)
+      )]
+      )
+      )),
+      itemCount: suggestionList.length,
+    );
+
+
+
+  }
+
 }
 
