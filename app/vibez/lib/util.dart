@@ -119,10 +119,17 @@ class PostWidget extends StatelessWidget {
                     ),
 
                     new Icon(
-                        Vibez.fire_button,
-                        color: const Color(0xFFFFFFFF),
+                        Vibez.fire_solid,
+                        color: Colors.orange,
+                        size: 26.0),
+                    new Icon(
+                        Vibez.trippy_icon,
+                        color: Colors.green,
                         size: 27.0),
-
+                    new Icon(
+                        Vibez.chill_icon,
+                        color: Colors.lightBlueAccent,
+                        size: 27.0),
                     new Text(
                       " " + likeCount + " ",
                       style: new TextStyle(fontSize:20.0,

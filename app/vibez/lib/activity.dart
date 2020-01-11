@@ -11,6 +11,7 @@ class ActivityWidget extends StatelessWidget {
             children: <Widget>[
 
               new Card(key: null,
+                  color: Colors.black87,
                   child:
                   new Row(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -24,13 +25,14 @@ class ActivityWidget extends StatelessWidget {
                         ),
 
                         new Icon(
-                            Vibez.fire_button,
+                            Vibez.fire_solid,
+                            color: Colors.white,
                             size: 21.0),
 
                         new Text(
                           " Activity",
                           style: new TextStyle(fontSize: 20.0,
-                              color: const Color(0xFF000000),
+                              color: Colors.white,
                               fontWeight: FontWeight.w200,
                               fontFamily: "Roboto"),
                         ),

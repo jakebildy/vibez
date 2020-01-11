@@ -71,12 +71,16 @@ class _MyHomePageState extends State<MyHomePage> {
         currentIndex: _currentIndex,
           items: [
             new BottomNavigationBarItem(
-              icon: const Icon(Icons.home),
+              icon: _currentIndex == 0
+                  ? const Icon(Vibez.house_icon)
+                  : const Icon(Vibez.house_icon_outline),
               title: new Text('Home'),
             ),
 
             new BottomNavigationBarItem(
-              icon: const Icon(Icons.bubble_chart),
+              icon: _currentIndex == 1
+                  ? const Icon(Vibez.vibe_icon)
+                  : const Icon(Vibez.vibe_icon_outline),
               title: new Text('Vibe'),
             ),
 
@@ -95,10 +99,9 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Badge(
                 badgeColor: Colors.pinkAccent,
                 badgeContent: Text('3', style: TextStyle(color: Colors.white)),
-                child: Icon(
-                  Vibez.fire_button,
-                  // color: green,
-                ),
+                child: _currentIndex == 3
+                 ? const Icon(Vibez.fire_solid)
+                  : const Icon(Vibez.fire_button),
               ),
               title: new Text('Activity'),
             ),
