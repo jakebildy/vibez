@@ -23,7 +23,7 @@ class ProfileWidget extends StatelessWidget {
 
 
               new Card(key: null,
-                  color: Color(0xFFfafafa),
+                  color: Colors.black87,
     child:
               new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -39,7 +39,7 @@ class ProfileWidget extends StatelessWidget {
                     new Text(
                       "@jake",
                       style: new TextStyle(fontSize: 20.0,
-                          color: const Color(0xFF000000),
+                          color: Colors.white,
                           fontWeight: FontWeight.w200,
                           fontFamily: "Roboto"),
                     ),
@@ -78,7 +78,7 @@ class ProfileWidget extends StatelessWidget {
               new Text(
                 username,
                 style: new TextStyle(fontSize: 16.0,
-                    color: const Color(0xFF000000),
+                    color: Colors.white,
                     fontWeight: FontWeight.w400,
                     fontFamily: "Roboto"),
               ),
@@ -86,7 +86,7 @@ class ProfileWidget extends StatelessWidget {
               new Text(
                 "Bios are for people who need an explanation",
                 style: new TextStyle(fontSize: 16.0,
-                    color: const Color(0xFF000000),
+                    color: Colors.white,
                     fontWeight: FontWeight.w200,
                     fontFamily: "Roboto"),
               ),
@@ -114,7 +114,7 @@ class ProfileWidget extends StatelessWidget {
                           new Text(
                             "1200",
                             style: new TextStyle(fontSize: 20.0,
-                                color: const Color(0xFF000000),
+                                color: Colors.white,
                                 fontWeight: FontWeight.w400,
                                 fontFamily: "Roboto"),
                           ),
@@ -122,7 +122,7 @@ class ProfileWidget extends StatelessWidget {
                           new Text(
                             "Followers",
                             style: new TextStyle(fontSize: 12.0,
-                                color: const Color(0xFF000000),
+                                color: Colors.white,
                                 fontWeight: FontWeight.w200,
                                 fontFamily: "Roboto"),
                           )
@@ -140,7 +140,7 @@ class ProfileWidget extends StatelessWidget {
                           new Text(
                             "900",
                             style: new TextStyle(fontSize: 20.0,
-                                color: const Color(0xFF000000),
+                                color: Colors.white,
                                 fontWeight: FontWeight.w400,
                                 fontFamily: "Roboto"),
                           ),
@@ -148,7 +148,7 @@ class ProfileWidget extends StatelessWidget {
                           new Text(
                             "Following",
                             style: new TextStyle(fontSize: 12.0,
-                                color: const Color(0xFF000000),
+                                color: Colors.white,
                                 fontWeight: FontWeight.w200,
                                 fontFamily: "Roboto"),
                           ),
@@ -183,12 +183,13 @@ class ProfileWidget extends StatelessWidget {
 
               new Icon(
                   Vibez.fire_button,
+                  color: Colors.white,
                   size: 21.0),
 
               new Text(
                 " Top 6",
                 style: new TextStyle(fontSize: 16.0,
-                    color: const Color(0xFF000000),
+                    color: Colors.white,
                     fontWeight: FontWeight.w400,
                     fontFamily: "Roboto"),
               ),

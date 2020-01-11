@@ -11,6 +11,7 @@ class DiscoverWidget extends StatelessWidget {
           children: <Widget>[
 
             new Card(key: null,
+                color: Colors.black87,
                 child:
                 new Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -25,12 +26,13 @@ class DiscoverWidget extends StatelessWidget {
 
                       new Icon(
                           Icons.bubble_chart,
+                          color: Colors.white,
                           size: 21.0),
 
                       new Text(
                         " Vibe",
                         style: new TextStyle(fontSize: 20.0,
-                            color: const Color(0xFF000000),
+                            color: Colors.white,
                             fontWeight: FontWeight.w200,
                             fontFamily: "Roboto"),
                       ),
@@ -46,6 +48,7 @@ class DiscoverWidget extends StatelessWidget {
             new Container(
               child:
               new Card(key: null,
+                color: Colors.black87,
                 child:
                 new Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -88,7 +91,7 @@ class DiscoverWidget extends StatelessWidget {
                                         new Text(
                                           "Jake",
                                           style: new TextStyle(fontSize:22.0,
-                                              color: const Color(0xFF000000),
+                                              color: Colors.white,
                                               fontWeight: FontWeight.w400,
                                               fontFamily: "Roboto"),
                                         ),
@@ -105,7 +108,7 @@ class DiscoverWidget extends StatelessWidget {
                                         new Text(
                                           "324",
                                           style: new TextStyle(fontSize:24.0,
-                                              color: const Color(0xFF000000),
+                                              color: Colors.white,
                                               fontWeight: FontWeight.w200,
                                               fontFamily: "Roboto"),
                                         ),
@@ -113,7 +116,7 @@ class DiscoverWidget extends StatelessWidget {
 
                                         new Icon(
                                             Vibez.fire_button,
-                                            color: const Color(0xFF000000),
+                                            color: Colors.white,
                                             size: 24.0),
 
 
@@ -126,7 +129,7 @@ class DiscoverWidget extends StatelessWidget {
                                   new Text(
                                     "London, ON",
                                     style: new TextStyle(fontSize:16.0,
-                                        color: const Color(0xFF000000),
+                                        color: Colors.white,
                                         fontWeight: FontWeight.w200,
                                         fontFamily: "Roboto"),
                                   ),
@@ -136,7 +139,7 @@ class DiscoverWidget extends StatelessWidget {
                                   new Text(
                                     "Phil Collins - In The Air Tonight",
                                     style: new TextStyle(fontSize:16.0,
-                                        color: const Color(0xFF000000),
+                                        color: Colors.white,
                                         fontWeight: FontWeight.w200,
                                         fontFamily: "Roboto"),
                                   ),

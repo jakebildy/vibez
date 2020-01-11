@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.cyan,
         primaryColor: const Color(0xFF00bcd4),
         accentColor: const Color(0xFF00bcd4),
-        canvasColor: const Color(0xFFfafafa),
+        canvasColor: Colors.black87,
         fontFamily: 'Roboto',
       ),
       home: new MyHomePage(),
@@ -93,6 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             new BottomNavigationBarItem(
               icon: Badge(
+                badgeColor: Colors.pinkAccent,
                 badgeContent: Text('3', style: TextStyle(color: Colors.white)),
                 child: Icon(
                   Vibez.fire_button,

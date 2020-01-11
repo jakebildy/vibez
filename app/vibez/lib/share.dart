@@ -13,6 +13,7 @@ class ShareWidget extends StatelessWidget {
       new ListView(
           children: <Widget>[
             new Card(key: null,
+                color: Colors.black87,
                 child:
                 new Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -27,12 +28,13 @@ class ShareWidget extends StatelessWidget {
 
                       new Icon(
                           Vibez.vibe_button,
+                          color: Colors.white,
                           size: 21.0),
 
                       new Text(
                         " Share",
                         style: new TextStyle(fontSize: 20.0,
-                            color: const Color(0xFF000000),
+                            color: Colors.white,
                             fontWeight: FontWeight.w200,
                             fontFamily: "Roboto"),
                       ),
@@ -47,6 +49,7 @@ class ShareWidget extends StatelessWidget {
             new Container(
               child:
               new Card(key: null,
+                color: Colors.black87,
                 child:
                 new Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -63,7 +66,7 @@ class ShareWidget extends StatelessWidget {
                             ),
 
                             new Image.network(
-                              'https://i.imgur.com/0O7yjDV.png',
+                              'https://i.imgur.com/Kgs0tRE.png',
                               fit: BoxFit.fill,
                               width: 40.0,
                               height: 40.0,
@@ -74,7 +77,7 @@ class ShareWidget extends StatelessWidget {
                             new Text(
                               "jake",
                               style: new TextStyle(fontSize:17.0,
-                                  color: const Color(0xFF000000),
+                                  color: Colors.white,
                                   fontWeight: FontWeight.w400,
                                   fontFamily: "Roboto"),
                             ),
@@ -90,7 +93,7 @@ class ShareWidget extends StatelessWidget {
 
                             new Icon(
                                 Icons.more_vert,
-                                color: const Color(0xFF000000),
+                                color: Colors.white,
                                 size: 27.0)
                           ]
 
@@ -127,7 +130,7 @@ class ShareWidget extends StatelessWidget {
                             new Text(
                               "Right now, ",
                               style: new TextStyle(fontSize:20.0,
-                                  color: const Color(0xFF000000),
+                                  color: Colors.white,
                                   fontWeight: FontWeight.w200,
                                   fontFamily: "Roboto"),
                             ),
@@ -159,6 +162,7 @@ class ShareWidget extends StatelessWidget {
     crossAxisAlignment: CrossAxisAlignment.center,
     children: <Widget>[
             new OutlineButton(
+                color: Colors.white,
                 child: new Text("Retry"),
                 onPressed: null,
                 shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0))
@@ -167,6 +171,7 @@ class ShareWidget extends StatelessWidget {
               padding: const EdgeInsets.all(12.0),
             ),
             new OutlineButton(
+                color: Colors.white,
                 child: new Text("Share"),
                 onPressed: null,
                 shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0))
