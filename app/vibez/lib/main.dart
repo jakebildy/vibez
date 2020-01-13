@@ -60,28 +60,28 @@ class _MyHomePageState extends State<MyHomePage> {
     // sets the background color of the `BottomNavigationBar`
     canvasColor: Colors.black,
     // sets the active color of the `BottomNavigationBar` if `Brightness` is light
-    primaryColor: Colors.white,
-    textTheme: Theme
+        primaryColor: Colors.white,
+        textTheme: Theme
         .of(context)
         .textTheme
         .copyWith(caption: new TextStyle(color: Colors.white))), // sets the inactive color of the `BottomNavigationBar`
     child:  new BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         onTap: onTabTapped,
         currentIndex: _currentIndex,
           items: [
             new BottomNavigationBarItem(
               icon: _currentIndex == 0
-                  ? const Icon(Vibez.house_icon)
+                  ? const Icon(Icons.home)
                   : const Icon(Vibez.house_icon_outline),
               title: new Text('Home'),
             ),
 
             new BottomNavigationBarItem(
-              icon: _currentIndex == 1
-                  ? const Icon(Vibez.vibe_icon)
-                  : const Icon(Vibez.vibe_icon_outline),
-              title: new Text('Vibe'),
+              icon: const Icon(Icons.graphic_eq),
+              title: new Text('Broadcast'),
             ),
 
             new BottomNavigationBarItem(

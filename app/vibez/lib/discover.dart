@@ -25,12 +25,12 @@ class DiscoverWidget extends StatelessWidget {
                       ),
 
                       new Icon(
-                          Icons.bubble_chart,
+                          Icons.graphic_eq,
                           color: Colors.white,
                           size: 21.0),
 
                       new Text(
-                        " Vibe",
+                        " Broadcast",
                         style: new TextStyle(fontSize: 20.0,
                             color: Colors.white,
                             fontWeight: FontWeight.w200,
