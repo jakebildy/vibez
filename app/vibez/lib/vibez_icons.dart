@@ -29,4 +29,5 @@ class Vibez {
   static const IconData trippy_icon = const IconData(0xe806, fontFamily: _kFontFam);
   static const IconData house_icon = const IconData(0xe807, fontFamily: _kFontFam);
   static const IconData house_icon_outline = const IconData(0xe808, fontFamily: _kFontFam);
+  static const IconData share_icon = const IconData(0xe809, fontFamily: _kFontFam);
 }

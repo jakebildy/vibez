@@ -31,9 +31,9 @@ class ActivityWidget extends StatelessWidget {
 
                         new Text(
                           " Activity",
-                          style: new TextStyle(fontSize: 20.0,
+                          style: new TextStyle(fontSize: 18.0,
                               color: Colors.white,
-                              fontWeight: FontWeight.w200,
+                              fontWeight: FontWeight.w300,
                               fontFamily: "Roboto"),
                         ),
 

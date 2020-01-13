@@ -27,15 +27,15 @@ class ShareWidget extends StatelessWidget {
                       ),
 
                       new Icon(
-                          Vibez.vibe_button,
+                          Vibez.share_icon,
                           color: Colors.white,
                           size: 21.0),
 
                       new Text(
                         " Share",
-                        style: new TextStyle(fontSize: 20.0,
+                        style: new TextStyle(fontSize: 18.0,
                             color: Colors.white,
-                            fontWeight: FontWeight.w200,
+                            fontWeight: FontWeight.w300,
                             fontFamily: "Roboto"),
                       ),
 

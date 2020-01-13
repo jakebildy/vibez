@@ -87,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
             new BottomNavigationBarItem(
               icon: InkWell(
                 child: Icon(
-                  Vibez.vibe_button,
+                  Vibez.share_icon,
                   // color: green,
                   size: 40.0,
                 ),

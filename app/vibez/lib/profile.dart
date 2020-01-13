@@ -65,7 +65,7 @@ class ProfileWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
 
-            
+
                     new Text(
                       " London, ON  🇨🇦",
                       style: new TextStyle(fontSize: 16.0,
@@ -183,7 +183,7 @@ class ProfileWidget extends StatelessWidget {
 
                             new Icon(
                               Icons.graphic_eq,
-                              color: Colors.green,
+                              color: Colors.white,
                               size: 35.0,
                             ),
 
@@ -210,7 +210,7 @@ class ProfileWidget extends StatelessWidget {
 
                             new Icon(
                               Icons.edit,
-                              color: Colors.green,
+                              color: Colors.white,
                               size: 35.0,
                             ),
 
@@ -238,7 +238,7 @@ class ProfileWidget extends StatelessWidget {
 
                new Icon(
                         Icons.more_horiz,
-                        color: Colors.green,
+                        color: Colors.white,
                         size: 35.0,
                       ),
 
