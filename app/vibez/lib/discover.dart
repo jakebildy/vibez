@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'vibez_icons.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class DiscoverWidget extends StatelessWidget {
 
@@ -63,12 +64,25 @@ class DiscoverWidget extends StatelessWidget {
                             new Padding(
                               padding: const EdgeInsets.all(14.0),
                             ),
+
+
+                            Stack(
+                                children: <Widget>[
+
+
+
                             new Image.network(
                               'https://i.imgur.com/Kgs0tRE.png',
                               fit:BoxFit.fill,
                               width: 100.0,
                               height: 100.0,
                             ),
+                            new SpinKitRipple(color: Colors.white, size: 100, ),
+
+
+
+
+                            ]),
                             new Padding(
                               padding: const EdgeInsets.all(4.0),
                             ),
