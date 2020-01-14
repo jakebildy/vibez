@@ -75,7 +75,7 @@ class ProfileWidget extends StatelessWidget {
                     ),
                   ]),
               new Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(13.0),
               ),
               new Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -83,7 +83,44 @@ class ProfileWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
 
+                    new Padding(
+                      padding: const EdgeInsets.all(14.0),
+                    ),
 
+                    new Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          new Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                new Image.network(
+                                  'https://i.imgur.com/7e317PJ.png',
+                                  fit:BoxFit.fitWidth,
+                                  width: 20.0,
+                                  height: 20.0,
+                                ),
+                                new Text(
+                                  "190",
+                                  style: new TextStyle(fontSize: 20.0,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400,
+                                      fontFamily: "Roboto"),
+                                ),
+                              ]),
+                          new Text(
+                            "Given",
+                            style: new TextStyle(fontSize: 12.0,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w200,
+                                fontFamily: "Roboto"),
+                          )
+                        ]
+
+                    ),
 
                     new Padding(
                       padding: const EdgeInsets.all(14.0),
@@ -138,18 +175,17 @@ class ProfileWidget extends StatelessWidget {
                         ]
 
                     ),
+
                     new Padding(
                       padding: const EdgeInsets.all(14.0),
                     ),
-
-
 
                   ]
 
               ),
 
               new Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(14.0),
               ),
               new Text(
                 "Bios are for people who need an explanation",
@@ -160,11 +196,11 @@ class ProfileWidget extends StatelessWidget {
               ),
 
               new Padding(
-                padding: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.all(16.0),
               ),
-
+              new Divider(color: Colors.white),
               new Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(5.0),
               ),
 
               new Row(
@@ -260,9 +296,9 @@ class ProfileWidget extends StatelessWidget {
 
 
               new Padding(
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.all(13),
               ),
-
+              new Divider(color: Colors.white),
               new Padding(
                 padding: const EdgeInsets.all(8.1),
               ),
