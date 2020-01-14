@@ -73,14 +73,13 @@ class _MyHomePageState extends State<MyHomePage> {
         currentIndex: _currentIndex,
           items: [
             new BottomNavigationBarItem(
-              icon: _currentIndex == 0
-                  ? const Icon(Icons.home)
-                  : const Icon(Vibez.house_icon_outline),
+              icon: const Icon(Icons.home, size: 34,),
+
               title: new Text('Home'),
             ),
 
             new BottomNavigationBarItem(
-              icon: const Icon(Icons.graphic_eq),
+              icon: const Icon(Icons.graphic_eq, size: 34,),
               title: new Text('Broadcast'),
             ),
 
@@ -89,7 +88,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Icon(
                   Vibez.share_icon,
                   // color: green,
-                  size: 40.0,
+                 // size: 40.0,
+                  size: 35,
                 ),
               ),
                 title: new Text('Share')
@@ -100,16 +100,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 badgeColor: Colors.pinkAccent,
                 badgeContent: Text('3', style: TextStyle(color: Colors.white)),
                 child: _currentIndex == 3
-                 ? const Icon(Vibez.fire_solid)
-                  : const Icon(Vibez.fire_button),
+                 ? const Icon(Vibez.fire_solid, size: 34,)
+                  : const Icon(Vibez.fire_button, size: 34,),
               ),
               title: new Text('Activity'),
             ),
 
             new BottomNavigationBarItem(
                 icon: _currentIndex == 4
-                    ? const Icon(Icons.person)
-                    : const Icon(Icons.perm_identity),
+                    ? const Icon(Icons.person, size: 34,)
+                    : const Icon(Icons.perm_identity, size: 34,),
 
               title: new Text('Me'),
 
@@ -132,15 +132,40 @@ class _MyHomePageState extends State<MyHomePage> {
           // action button
           IconButton(
           icon: Icon(Icons.search),
+          iconSize: 34,
           onPressed: () {
             showSearch(context: context, delegate: DataSearch());
           },
         ),
 
-        AccountMenu(),
+          new Padding(
+            padding: const EdgeInsets.all(10.0),
+          ),
+          new Padding(
+            padding: const EdgeInsets.all(10.0),
+            child:
+            Badge(
+                badgeColor: Colors.green,
+                badgeContent: Text('3', style: TextStyle(color: Colors.white)),
+                position: BadgePosition.bottomRight(right: -5),
+                child: new Image.network(
+                  'https://i.imgur.com/7e317PJ.png',
+                  fit:BoxFit.fitWidth,
+                  width: 34.0,
+                  height: 34.0,
+                )),
+
+          ),
 
 
-          ],
+          new Padding(
+            padding: const EdgeInsets.all(7.0),
+          ),
+
+
+
+
+              ],
             title: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
