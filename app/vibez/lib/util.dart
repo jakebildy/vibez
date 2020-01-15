@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'vibez_icons.dart';
 import 'package:video_player/video_player.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'main.dart';
 
 /// Post Widget ///
 
@@ -22,8 +23,7 @@ class PostWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return new Container(
-      child:
-      new Card(key: null,
+      child: new Card(key: null,
         color:  const Color(0xFF000000),
         child:
         new Column(
@@ -154,7 +154,7 @@ class PostWidget extends StatelessWidget {
       alignment: Alignment.center,
       width: 1.7976931348623157e+308,
       height: 690.0,
-    );
+          );
   }
 }
 

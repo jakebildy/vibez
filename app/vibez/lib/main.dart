@@ -8,11 +8,16 @@ import 'activity.dart';
 import 'package:badges/badges.dart';
 import 'util.dart';
 
+
 void main() {
 
   runApp(new MyApp());
 }
+
+
 class MyApp extends StatelessWidget {
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +37,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+
   MyHomePage({Key key}) : super(key: key);
   @override
   _MyHomePageState createState() => new _MyHomePageState();
@@ -39,8 +45,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  int _gemCount = 4;
+
   int _currentIndex = 0;
   final List<Widget> _children = [
+
     HomeWidget(),
     DiscoverWidget(),
     ShareWidget(),
@@ -50,8 +59,23 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
     return new Scaffold(
-        body: _children[_currentIndex],
+        body:  new GestureDetector(
+
+            onDoubleTap: ()
+            {
+              print("You liked this song.");
+            },
+
+            onLongPress: ()
+            {
+              print("You gave a gem.");
+              onGemGiven();
+             
+            },
+
+            child: _children[_currentIndex],),
 
 
 
@@ -146,7 +170,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child:
             Badge(
                 badgeColor: Colors.green,
-                badgeContent: Text('3', style: TextStyle(color: Colors.white)),
+                badgeContent: Text('$_gemCount', style: TextStyle(color: Colors.white)),
                 position: BadgePosition.bottomRight(right: -5),
                 child: new Image.network(
                   'https://i.imgur.com/7e317PJ.png',
@@ -191,7 +215,15 @@ class _MyHomePageState extends State<MyHomePage> {
       _currentIndex = index;
     });
   }
-}
+
+  void onGemGiven(){
+    setState(() {
+      if (_gemCount >= 1) {
+        _gemCount--;
+      }
+    });
+  }
+
 
 
 class DataSearch extends SearchDelegate<String>{
@@ -272,4 +304,3 @@ class DataSearch extends SearchDelegate<String>{
   }
 
 }
-
