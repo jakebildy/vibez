@@ -78,7 +78,7 @@ class ShareWidget extends StatelessWidget {
                               "jake",
                               style: new TextStyle(fontSize:17.0,
                                   color: Colors.white,
-                                  fontWeight: FontWeight.w400,
+                                  fontWeight: FontWeight.w800,
                                   fontFamily: "Roboto"),
                             ),
 
@@ -119,32 +119,7 @@ class ShareWidget extends StatelessWidget {
                           ]
 
                       ),
-                      new Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            new Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                            ),
-                            new Text(
-                              "Right now, ",
-                              style: new TextStyle(fontSize:20.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w200,
-                                  fontFamily: "Roboto"),
-                            ),
-                            new DropdownButton<String>(
-                              items: <String>['at a party 🎉', 'just chilling ✌️', 'in the car 🚗', 'on an adventure ⭐', 'getting blazed 🔥'].map((String value) {
-                                return new DropdownMenuItem<String>(
-                                  value: value,
-                                  child: new Text(value),
-                                );
-                              }).toList(),
-                              onChanged: (_) {},
-                            )
 
-                          ])
                     ]
 
                 ),
@@ -156,28 +131,7 @@ class ShareWidget extends StatelessWidget {
               width: 1.7976931348623157e+308,
               height: 460.0,
             ),
-    new Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    mainAxisSize: MainAxisSize.max,
-    crossAxisAlignment: CrossAxisAlignment.center,
-    children: <Widget>[
-            new OutlineButton(
-                color: Colors.white,
-                child: new Text("Retry"),
-                onPressed: null,
-                shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0))
-            ),
-            new Padding(
-              padding: const EdgeInsets.all(12.0),
-            ),
-            new OutlineButton(
-                color: Colors.white,
-                child: new Text("Share"),
-                onPressed: null,
-                shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0))
-            ),
-
-    ]),
+    
 
           ]),
 
