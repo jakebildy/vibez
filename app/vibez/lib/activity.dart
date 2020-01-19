@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'vibez_icons.dart';
+import 'content/message.dart';
+import 'content/broadcast.dart';
 
 class ActivityWidget extends StatelessWidget {
 
@@ -61,54 +63,11 @@ class ActivityWidget extends StatelessWidget {
                       padding: const EdgeInsets.all(10.0),
                     ),
 
-                    Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 0.0, horizontal: 20.0),
-                        child:
-    new Column(
-    mainAxisAlignment: MainAxisAlignment.start,
-    mainAxisSize: MainAxisSize.max,
-    crossAxisAlignment: CrossAxisAlignment.center,
-    children: <Widget>[
+                      new BroadcastWidget(username: "Harambe", color: Colors.yellowAccent, imgUrl: 'https://i.imgur.com/9lYUiGL.png', location: "Cincinnati, OH",),
+                      new BroadcastWidget(username: "Snoop Dogg", color: Colors.green, imgUrl: 'https://i.imgur.com/zRbQAba.png', location: "Los Angeles, CA"),
 
-    new OutlineButton(
-                          onPressed: () {},
-                          borderSide: BorderSide(
-                            color: Colors.pink, //Color of the border
-                            style: BorderStyle.solid, //Style of the border
-                            width: 2.5, //width of the border
-                          ),
-                          child:
-                            new Image.network(
-                            'https://i.imgur.com/Kgs0tRE.png',
-                            fit: BoxFit.fill,
-                            width: 60.0,
-                            height: 60.0,
-                          ),
-                          shape: new CircleBorder(),
 
-                          padding: const EdgeInsets.all(3.0),),
-                    new Padding(
-                      padding: const EdgeInsets.all(6.0),
-                    ),
-                    new Text(
-                      "Jake",
-                      style: new TextStyle(fontSize: 16.0,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w800,
-                          fontFamily: "Roboto"),
-                    ),
-                    new Text(
-                      "London, ON",
-                      style: new TextStyle(fontSize: 16.0,
-                          color: Colors.pink,
-                          fontWeight: FontWeight.w800,
-                          fontFamily: "Roboto"),
-                    ),
-                        ])),
-                    new Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 90),
-                    ),
+
 
                   ]
 
@@ -117,91 +76,22 @@ class ActivityWidget extends StatelessWidget {
                 padding: const EdgeInsets.all(16.0),
               ),
 
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Padding(
-                      padding: const EdgeInsets.all(5.0),
-                    ),
+                new MessageWidget(username: "Snoop Dogg", description: "Snoop sent a snippet", icon: Icons.play_circle_outline, color: Colors.pinkAccent, timestamp: "4:20 PM", imgUrl: 'https://i.imgur.com/zRbQAba.png',),
 
-                    new Image.network(
-                      'https://i.imgur.com/Kgs0tRE.png',
-                      fit: BoxFit.fill,
-                      width: 80.0,
-                      height: 80.0,
-                    ),
+                new Padding(
+                  padding: const EdgeInsets.all(5.0),
+                ),
 
-                    new Padding(
-                      padding: const EdgeInsets.all(4.0),
-                    ),
-                    new Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
+                new MessageWidget(username: "Harambe", description: "Harambe sent a song", icon: Icons.music_note, color: Colors.pinkAccent, timestamp: "10:44 AM", imgUrl: 'https://i.imgur.com/9lYUiGL.png',),
 
-                          new Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                new Text(
-                                  "Jake",
-                                  style: new TextStyle(fontSize:20.0,
-                                      color: const Color(0xFFFFFFFF),
-                                      fontWeight: FontWeight.w800,
-                                      fontFamily: "Roboto"),
-                                ),
-                                new Padding(
-                                  padding: const EdgeInsets.all(2.0),
-                                ),
-                                new Icon(
-                                    Icons.verified_user,
-                                    color: const Color(0xFF2cb3fb),
-                                    size: 23.0),
+                new Padding(
+                  padding: const EdgeInsets.all(5.0),
+                ),
 
-                              ]),
-                          new Padding(
-                            padding: const EdgeInsets.all(3.0),
-                          ),
-                          new Text(
-                            "You shared a song",
-                            style: new TextStyle(fontSize:16.0,
-                                color: const Color(0xFFFFFFFF),
-                                fontWeight: FontWeight.w600,
-                                fontFamily: "Roboto"),
-                          ),
-
-                        ]),
+                new MessageWidget(username: "Yoda", description: "Yoda liked your song", icon:  Icons.music_note, color:  Colors.green, timestamp: "Yesterday", imgUrl: 'https://i.imgur.com/zSeMBiW.png',)
 
 
-                    new Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          new Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 40.0),
-                          ),
-
-                    new Text(
-                      "10:44 AM",
-                      style: new TextStyle(fontSize:10.0,
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w800,
-                          fontFamily: "Roboto"),
-                    ),
-                          ]),
-                    new Icon(
-                        Icons.music_note,
-                        color: Colors.green,
-                        size: 40.0),
-                  ]
-
-              ),
-
+              
 
             ]));
 
