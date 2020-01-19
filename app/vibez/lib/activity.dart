@@ -11,7 +11,7 @@ class ActivityWidget extends StatelessWidget {
             children: <Widget>[
 
               new Card(key: null,
-                  color: Colors.black87,
+                  color: const Color(0xFF090909),
                   child:
                   new Row(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -33,7 +33,7 @@ class ActivityWidget extends StatelessWidget {
                           " Activity",
                           style: new TextStyle(fontSize: 18.0,
                               color: Colors.white,
-                              fontWeight: FontWeight.w300,
+                              fontWeight: FontWeight.w800,
                               fontFamily: "Roboto"),
                         ),
 
@@ -43,7 +43,7 @@ class ActivityWidget extends StatelessWidget {
 
                       ]
 
-                  )),
+                  ),),
 
 
 

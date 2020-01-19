@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.cyan,
         primaryColor: const Color(0xFF00bcd4),
         accentColor: const Color(0xFF00bcd4),
-        canvasColor: Colors.black87,
+        canvasColor: const Color(0xFF090909),
         fontFamily: 'Roboto',
       ),
       home: new MyHomePage(),
@@ -54,161 +54,159 @@ class _MyHomePageState extends State<MyHomePage> {
     DiscoverWidget(),
     ShareWidget(),
     ActivityWidget(),
-    ProfileWidget(username: "jake"),
+    ProfileWidget(username: "Jake"),
   ];
 
   @override
   Widget build(BuildContext context) {
-
     return new Scaffold(
-        body:  new GestureDetector(
+        body: new GestureDetector(
 
-            onDoubleTap: ()
-            {
-              print("You liked this song.");
-            },
+          onDoubleTap: () {
+            print("You liked this song.");
+          },
 
-            onLongPress: ()
-            {
-              print("You gave a gem.");
-              onGemGiven();
-             
-            },
+          onLongPress: () {
+            print("You gave a gem.");
+            onGemGiven();
+          },
 
-            child: _children[_currentIndex],),
+          child: _children[_currentIndex],),
 
 
+        bottomNavigationBar: new Theme(
+          data: Theme.of(context).copyWith(
+            // sets the background color of the `BottomNavigationBar`
+              canvasColor: Colors.black,
+              // sets the active color of the `BottomNavigationBar` if `Brightness` is light
+              primaryColor: Colors.white,
+              textTheme: Theme
+                  .of(context)
+                  .textTheme
+                  .copyWith(caption: new TextStyle(color: Colors.white))),
+          // sets the inactive color of the `BottomNavigationBar`
+          child: new BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
+              showSelectedLabels: false,
+              showUnselectedLabels: false,
+              onTap: onTabTapped,
+              currentIndex: _currentIndex,
+              items: [
+                new BottomNavigationBarItem(
+                  icon: const Icon(Icons.home, size: 34,),
 
-                  bottomNavigationBar: new Theme(
-    data: Theme.of(context).copyWith(
-    // sets the background color of the `BottomNavigationBar`
-    canvasColor: Colors.black,
-    // sets the active color of the `BottomNavigationBar` if `Brightness` is light
-        primaryColor: Colors.white,
-        textTheme: Theme
-        .of(context)
-        .textTheme
-        .copyWith(caption: new TextStyle(color: Colors.white))), // sets the inactive color of the `BottomNavigationBar`
-    child:  new BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        onTap: onTabTapped,
-        currentIndex: _currentIndex,
-          items: [
-            new BottomNavigationBarItem(
-              icon: const Icon(Icons.home, size: 34,),
-
-              title: new Text('Home'),
-            ),
-
-            new BottomNavigationBarItem(
-              icon: const Icon(Icons.graphic_eq, size: 34,),
-              title: new Text('Broadcast'),
-            ),
-
-            new BottomNavigationBarItem(
-              icon: InkWell(
-                child: Icon(
-                  Vibez.share_icon,
-                  // color: green,
-                 // size: 40.0,
-                  size: 35,
+                  title: new Text('Home'),
                 ),
-              ),
-                title: new Text('Share')
-            ),
 
-            new BottomNavigationBarItem(
-              icon: Badge(
-                badgeColor: Colors.pinkAccent,
-                badgeContent: Text('3', style: TextStyle(color: Colors.white)),
-                child: _currentIndex == 3
-                 ? const Icon(Vibez.fire_solid, size: 34,)
-                  : const Icon(Vibez.fire_button, size: 34,),
-              ),
-              title: new Text('Activity'),
-            ),
+                new BottomNavigationBarItem(
+                  icon: const Icon(Icons.graphic_eq, size: 34,),
+                  title: new Text('Broadcast'),
+                ),
 
-            new BottomNavigationBarItem(
-                icon: _currentIndex == 4
-                    ? const Icon(Icons.person, size: 34,)
-                    : const Icon(Icons.perm_identity, size: 34,),
+                new BottomNavigationBarItem(
+                    icon: InkWell(
+                      child: Icon(
+                        Vibez.share_icon,
+                        // color: green,
+                        // size: 40.0,
+                        size: 35,
+                      ),
+                    ),
+                    title: new Text('Share')
+                ),
 
-              title: new Text('Me'),
+                new BottomNavigationBarItem(
+                  icon: Badge(
+                    badgeColor: Colors.pinkAccent,
+                    badgeContent: Text(
+                        '3', style: TextStyle(color: Colors.white)),
+                    child: _currentIndex == 3
+                        ? const Icon(Vibez.fire_solid, size: 34,)
+                        : const Icon(Vibez.fire_button, size: 34,),
+                  ),
+                  title: new Text('Activity'),
+                ),
 
-            )
-          ]
+                new BottomNavigationBarItem(
+                  icon: _currentIndex == 4
+                      ? const Icon(Icons.person, size: 34,)
+                      : const Icon(Icons.perm_identity, size: 34,),
 
-      ),
+                  title: new Text('Me'),
 
-    ),
+                )
+              ]
+
+          ),
+
+        ),
 
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(60.0),
           child: AppBar(
             backgroundColor: Colors.black,
-            iconTheme: Theme.of(context).primaryIconTheme.copyWith(
+            iconTheme: Theme
+                .of(context)
+                .primaryIconTheme
+                .copyWith(
                 color: Colors.white
 
             ),
-              actions: <Widget>[
-          // action button
-          IconButton(
-          icon: Icon(Icons.search),
-          iconSize: 34,
-          onPressed: () {
-            showSearch(context: context, delegate: DataSearch());
-          },
-        ),
+            actions: <Widget>[
+              // action button
+              IconButton(
+                icon: Icon(Icons.search),
+                iconSize: 34,
+                onPressed: () {
+                  showSearch(context: context, delegate: DataSearch());
+                },
+              ),
 
-          new Padding(
-            padding: const EdgeInsets.all(10.0),
-          ),
-          new Padding(
-            padding: const EdgeInsets.all(10.0),
-            child:
-            Badge(
-                badgeColor: Colors.green,
-                badgeContent: Text('$_gemCount', style: TextStyle(color: Colors.white)),
-                position: BadgePosition.bottomRight(right: -5),
-                child: new Image.network(
-                  'https://i.imgur.com/7e317PJ.png',
-                  fit:BoxFit.fitWidth,
-                  width: 34.0,
-                  height: 34.0,
-                )),
+              new Padding(
+                padding: const EdgeInsets.all(10.0),
+              ),
+              new Padding(
+                padding: const EdgeInsets.all(10.0),
+                child:
+                Badge(
+                    badgeColor: Colors.green,
+                    badgeContent: Text(
+                        '$_gemCount', style: TextStyle(color: Colors.white)),
+                    position: BadgePosition.bottomRight(right: -5),
+                    child: new Image.network(
+                      'https://i.imgur.com/7e317PJ.png',
+                      fit: BoxFit.fitWidth,
+                      width: 34.0,
+                      height: 34.0,
+                    )),
 
-          ),
-
-
-          new Padding(
-            padding: const EdgeInsets.all(7.0),
-          ),
+              ),
 
 
+              new Padding(
+                padding: const EdgeInsets.all(7.0),
+              ),
 
 
-              ],
+            ],
             title: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                    padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0), child:  new Image.network(
-            'https://i.imgur.com/lsH8FH9.png',
-            fit:BoxFit.fitWidth,
-            width: 130.0,
-            height: 130.0,
-          )),],
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 0.0, horizontal: 20.0),
+                    child: new Image.network(
+                      'https://i.imgur.com/lsH8FH9.png',
+                      fit: BoxFit.fitWidth,
+                      width: 130.0,
+                      height: 130.0,
+                    )),
+              ],
 
             ),
           ),
         ));
-
-
-
-
-      }
+  }
 
   void onTabTapped(int index) {
     setState(() {
@@ -216,14 +214,14 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void onGemGiven(){
+  void onGemGiven() {
     setState(() {
       if (_gemCount >= 1) {
         _gemCount--;
       }
     });
   }
-
+}
 
 
 class DataSearch extends SearchDelegate<String>{

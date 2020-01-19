@@ -12,7 +12,7 @@ class DiscoverWidget extends StatelessWidget {
           children: <Widget>[
 
             new Card(key: null,
-                color: Colors.black87,
+                color: const Color(0xFF090909),
                 child:
                 new Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -34,7 +34,7 @@ class DiscoverWidget extends StatelessWidget {
                         " Broadcast",
                         style: new TextStyle(fontSize: 18.0,
                             color: Colors.white,
-                            fontWeight: FontWeight.w300,
+                            fontWeight: FontWeight.w800,
                             fontFamily: "Roboto"),
                       ),
 
@@ -49,7 +49,7 @@ class DiscoverWidget extends StatelessWidget {
             new Container(
               child:
               new Card(key: null,
-                color: Colors.black87,
+                color: const Color(0xFF090909),
                 child:
                 new Column(
                     mainAxisAlignment: MainAxisAlignment.start,

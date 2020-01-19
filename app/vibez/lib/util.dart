@@ -54,7 +54,7 @@ class PostWidget extends StatelessWidget {
                       username,
                       style: new TextStyle(fontSize:17.0,
                           color: const Color(0xFFFFFFFF),
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w800,
                           fontFamily: "Roboto"),
                     ),
 
@@ -104,7 +104,7 @@ class PostWidget extends StatelessWidget {
                       songName,
                       style: new TextStyle(fontSize:20.0,
                           color: const Color(0xFFFFFFFF),
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w800,
                           fontFamily: "Roboto"),
                     ),
 

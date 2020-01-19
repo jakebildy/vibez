@@ -8,13 +8,14 @@ class HomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
       return new Scaffold(
         body:
-        new ListView(
+        new PageView(
             children: <Widget>[
 
               new PostWidget(username: "jake", likeCount: "420", description: "5 hours ago, at a party", songName: "Phil Collins - In The Air Tonight",),
               new PostWidget(username: "jake", likeCount: "69",description: "10 hours ago, just chilling",songName: "Phil Collins - In The Air Tonight",),
 
-        ]),
+        ],
+          scrollDirection: Axis.vertical,),
 
       );
     }

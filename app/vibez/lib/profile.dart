@@ -23,9 +23,9 @@ class ProfileWidget extends StatelessWidget {
 
 
 
-              new Padding(
-                padding: const EdgeInsets.all(5.0),
-              ),
+
+              Stack(
+                  children: <Widget>[
         new Row(
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
@@ -34,48 +34,73 @@ class ProfileWidget extends StatelessWidget {
 
 
               new Image.network(
-                'https://i.imgur.com/Kgs0tRE.png',
+                'https://i.imgur.com/lOIRifZ.png',
                 fit: BoxFit.fill,
-                width: 100.0,
-                height: 100.0,
+                width: 411.0,
+                height: 280.0,
               ),]),
-        new Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+    new Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    mainAxisSize: MainAxisSize.max,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: <Widget>[
+
+
+    new Padding(
+    padding: const EdgeInsets.symmetric(vertical: 95.0),
+    ),
+
+    new Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              new Padding(
+                padding: const EdgeInsets.all(20.0),
+              ),
               new Text(
                 username,
-                style: new TextStyle(fontSize: 18.0,
+                style: new TextStyle(fontSize: 30.0,
                     color: Colors.white,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w800,
                     fontFamily: "Roboto"),
               ),
               new Icon(
                   Icons.verified_user,
                   color: const Color(0xFF2cb3fb),
-                  size: 21.0),
+                  size: 30.0),
               ]),
-              new Padding(
-                padding: const EdgeInsets.all(3.0),
-              ),
+
               new Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-
-
+                    new Padding(
+                      padding: const EdgeInsets.all(20.0),
+                    ),
                     new Text(
-                      " London, ON  🇨🇦",
-                      style: new TextStyle(fontSize: 16.0,
+                      "Artist",
+                      style: new TextStyle(fontSize: 23.0,
                           color: Colors.white,
-                          fontWeight: FontWeight.w200,
+                          fontWeight: FontWeight.w600,
                           fontFamily: "Roboto"),
                     ),
-                  ]),
+
+
+                  ])])]),
               new Padding(
-                padding: const EdgeInsets.all(13.0),
+                padding: const EdgeInsets.all(10.0),
+              ),
+              new Text(
+                "London, ON  🇨🇦",
+                style: new TextStyle(fontSize: 18.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w800,
+                    fontFamily: "Roboto"),
+              ),
+              new Padding(
+                padding: const EdgeInsets.all(10.0),
               ),
               new Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -208,9 +233,19 @@ class ProfileWidget extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
+    new Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    mainAxisSize: MainAxisSize.min,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: <Widget>[
 
-                    new RawMaterialButton(
+                    new OutlineButton(
                       onPressed: () {},
+                      borderSide: BorderSide(
+                        color: Colors.pink, //Color of the border
+                        style: BorderStyle.solid, //Style of the border
+                        width: 1.2, //width of the border
+                      ),
                       child:  new Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           mainAxisSize: MainAxisSize.max,
@@ -219,77 +254,131 @@ class ProfileWidget extends StatelessWidget {
 
                             new Icon(
                               Icons.graphic_eq,
-                              color: Colors.white,
+                              color: Colors.pink,
                               size: 35.0,
                             ),
-
-                            new Text("Broadcast",  style: new TextStyle(fontSize: 14.0,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w200,
-                                fontFamily: "Roboto"),)
-
                           ]),
                       shape: new CircleBorder(),
-                      elevation: 2.0,
-                      fillColor: Colors.black38,
+
                       padding: const EdgeInsets.all(15.0),
+
                     ),
-
-
-                    new RawMaterialButton(
-                      onPressed: () {},
-                      child:  new Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-
-                            new Icon(
-                              Icons.edit,
-                              color: Colors.white,
-                              size: 35.0,
-                            ),
-
-                            new Text("Edit Profile",
-                              style: new TextStyle(fontSize: 14.0,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w200,
-                                fontFamily: "Roboto"),)
-
-                          ]),
-                      shape: new CircleBorder(),
-                      elevation: 2.0,
-                      fillColor: Colors.black38,
-                      padding: const EdgeInsets.all(15.0),
+                    new Padding(
+                      padding: const EdgeInsets.all(6.0),
                     ),
+                    new Text(
+                      "Broadcast",
+                      style: new TextStyle(fontSize: 16.0,
+                          color: Colors.pink,
+                          fontWeight: FontWeight.w800,
+                          fontFamily: "Roboto"),
+                    ),
+]),
 
-
-                    new RawMaterialButton(
-                      onPressed: () {},
-                      child:  new Column(
-    mainAxisAlignment: MainAxisAlignment.start,
-    mainAxisSize: MainAxisSize.max,
+new Column(
+mainAxisAlignment: MainAxisAlignment.start,
+    mainAxisSize: MainAxisSize.min,
     crossAxisAlignment: CrossAxisAlignment.center,
     children: <Widget>[
+      new Padding(
+        padding: const EdgeInsets.all(16.0),
+      ),
+]),
 
-               new Icon(
-                        Icons.more_horiz,
-                        color: Colors.white,
-                        size: 35.0,
-                      ),
+    new Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
 
-                new Text("More",
-                  style: new TextStyle(fontSize: 14.0,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w200,
-                      fontFamily: "Roboto"),)
+          new OutlineButton(
+            onPressed: () {},
+            borderSide: BorderSide(
+              color: Colors.white, //Color of the border
+              style: BorderStyle.solid, //Style of the border
+              width: 1.2, //width of the border
+            ),
+            child:  new Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
 
-    ]),
-                      shape: new CircleBorder(),
-                      elevation: 2.0,
-                      fillColor: Colors.black38,
-                      padding: const EdgeInsets.all(15.0),
-                    ),
+                  new Icon(
+                    Icons.edit,
+                    color: Colors.white,
+                    size: 35.0,
+                  ),
+                ]),
+            shape: new CircleBorder(),
+
+            padding: const EdgeInsets.all(15.0),
+
+          ),
+          new Padding(
+            padding: const EdgeInsets.all(6.0),
+          ),
+          new Text(
+            "Edit Profile",
+            style: new TextStyle(fontSize: 16.0,
+                color: Colors.white,
+                fontWeight: FontWeight.w800,
+                fontFamily: "Roboto"),
+          ),
+        ]),
+
+
+    new Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          new Padding(
+            padding: const EdgeInsets.all(16.0),
+          ),
+        ]),
+
+    new Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+
+          new OutlineButton(
+            onPressed: () {},
+            borderSide: BorderSide(
+              color: Colors.green, //Color of the border
+              style: BorderStyle.solid, //Style of the border
+              width: 1.2, //width of the border
+            ),
+            child:  new Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+
+                  new Icon(
+                    Icons.more_horiz,
+                    color: Colors.green,
+                    size: 35.0,
+                  ),
+                ]),
+            shape: new CircleBorder(),
+
+            padding: const EdgeInsets.all(15.0),
+
+          ),
+          new Padding(
+            padding: const EdgeInsets.all(6.0),
+          ),
+          new Text(
+            "More",
+            style: new TextStyle(fontSize: 16.0,
+                color: Colors.green,
+                fontWeight: FontWeight.w800,
+                fontFamily: "Roboto"),
+          ),
+        ]),
 
 
                   ]),
