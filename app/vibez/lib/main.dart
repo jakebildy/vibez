@@ -99,8 +99,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
 
                 new BottomNavigationBarItem(
-                  icon: const Icon(Icons.graphic_eq, size: 34,),
-                  title: new Text('Broadcast'),
+                  icon: const Icon(Vibez.vinyl_icon, size: 34,),
+                  title: new Text('Library'),
                 ),
 
                 new BottomNavigationBarItem(
