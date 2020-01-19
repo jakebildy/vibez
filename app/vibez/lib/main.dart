@@ -51,9 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> _children = [
 
     HomeWidget(),
-    DiscoverWidget(),
-    ShareWidget(),
     ActivityWidget(),
+    ShareWidget(),
+    DiscoverWidget(),
     ProfileWidget(username: "Jake"),
   ];
 
@@ -93,15 +93,23 @@ class _MyHomePageState extends State<MyHomePage> {
               currentIndex: _currentIndex,
               items: [
                 new BottomNavigationBarItem(
-                  icon: const Icon(Icons.home, size: 34,),
+                  icon: const Icon(Icons.home, size: 36,),
 
                   title: new Text('Home'),
                 ),
 
                 new BottomNavigationBarItem(
-                  icon: const Icon(Vibez.vinyl_icon, size: 34,),
-                  title: new Text('Library'),
+                  icon: Badge(
+                    badgeColor: Colors.pinkAccent,
+                    badgeContent: Text(
+                        '3', style: TextStyle(color: Colors.white)),
+                    child: _currentIndex == 1
+                        ? const Icon(Vibez.fire_solid, size: 33,)
+                        : const Icon(Vibez.fire_button, size: 33,),
+                  ),
+                  title: new Text('Activity'),
                 ),
+
 
                 new BottomNavigationBarItem(
                     icon: InkWell(
@@ -116,15 +124,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
 
                 new BottomNavigationBarItem(
-                  icon: Badge(
-                    badgeColor: Colors.pinkAccent,
-                    badgeContent: Text(
-                        '3', style: TextStyle(color: Colors.white)),
-                    child: _currentIndex == 3
-                        ? const Icon(Vibez.fire_solid, size: 34,)
-                        : const Icon(Vibez.fire_button, size: 34,),
-                  ),
-                  title: new Text('Activity'),
+                  icon: const Icon(Vibez.vinyl_icon, size: 34,),
+                  title: new Text('Library'),
                 ),
 
                 new BottomNavigationBarItem(

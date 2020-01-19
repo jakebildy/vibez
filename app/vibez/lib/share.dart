@@ -131,7 +131,7 @@ class ShareWidget extends StatelessWidget {
               width: 1.7976931348623157e+308,
               height: 460.0,
             ),
-    
+
 
           ]),
 

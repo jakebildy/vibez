@@ -129,37 +129,75 @@ class ActivityWidget extends StatelessWidget {
                     new Image.network(
                       'https://i.imgur.com/Kgs0tRE.png',
                       fit: BoxFit.fill,
-                      width: 40.0,
-                      height: 40.0,
+                      width: 80.0,
+                      height: 80.0,
                     ),
 
                     new Padding(
                       padding: const EdgeInsets.all(4.0),
                     ),
+                    new Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+
+                          new Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                new Text(
+                                  "Jake",
+                                  style: new TextStyle(fontSize:20.0,
+                                      color: const Color(0xFFFFFFFF),
+                                      fontWeight: FontWeight.w800,
+                                      fontFamily: "Roboto"),
+                                ),
+                                new Padding(
+                                  padding: const EdgeInsets.all(2.0),
+                                ),
+                                new Icon(
+                                    Icons.verified_user,
+                                    color: const Color(0xFF2cb3fb),
+                                    size: 23.0),
+
+                              ]),
+                          new Padding(
+                            padding: const EdgeInsets.all(3.0),
+                          ),
+                          new Text(
+                            "You shared a song",
+                            style: new TextStyle(fontSize:16.0,
+                                color: const Color(0xFFFFFFFF),
+                                fontWeight: FontWeight.w600,
+                                fontFamily: "Roboto"),
+                          ),
+
+                        ]),
+
+
+                    new Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          new Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 40.0),
+                          ),
+
                     new Text(
-                      "Jake",
-                      style: new TextStyle(fontSize:17.0,
-                          color: const Color(0xFFFFFFFF),
+                      "10:44 AM",
+                      style: new TextStyle(fontSize:10.0,
+                          color: Colors.grey,
                           fontWeight: FontWeight.w800,
                           fontFamily: "Roboto"),
                     ),
-
-
-
+                          ]),
                     new Icon(
-                        Icons.verified_user,
-                        color: const Color(0xFF2cb3fb),
-                        size: 23.0),
-                    new Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                    ),
-                    new Text(
-                      "You shared a song",
-                      style: new TextStyle(fontSize:17.0,
-                          color: const Color(0xFFFFFFFF),
-                          fontWeight: FontWeight.w400,
-                          fontFamily: "Roboto"),
-                    ),
+                        Icons.music_note,
+                        color: Colors.green,
+                        size: 40.0),
                   ]
 
               ),
