@@ -103,23 +103,162 @@ class ShareWidget extends StatelessWidget {
                       ),
                       new SpinKitThreeBounce(color: Colors.pinkAccent, size: 40),
                       new Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 48.0, horizontal: 124.0),
+                        padding: const EdgeInsets.symmetric(vertical: 148.0, horizontal: 124.0),
                       ),
                       new Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
-                            new Padding(
-                              padding: const EdgeInsets.all(24.0),
-                            ),
+                            new Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+
+                                  new OutlineButton(
+                                    onPressed: () {},
+                                    borderSide: BorderSide(
+                                      color: Colors.pink, //Color of the border
+                                      style: BorderStyle.solid, //Style of the border
+                                      width: 1.2, //width of the border
+                                    ),
+                                    child:  new Column(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: <Widget>[
+
+                                          new Icon(
+                                            Icons.send,
+                                            color: Colors.pink,
+                                            size: 35.0,
+                                          ),
+                                        ]),
+                                    shape: new CircleBorder(),
+
+                                    padding: const EdgeInsets.all(15.0),
+
+                                  ),
+                                  new Padding(
+                                    padding: const EdgeInsets.all(6.0),
+                                  ),
+                                  new Text(
+                                    "Send",
+                                    style: new TextStyle(fontSize: 16.0,
+                                        color: Colors.pink,
+                                        fontWeight: FontWeight.w800,
+                                        fontFamily: "Roboto"),
+                                  ),
+                                ]),
+
+                            new Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  new Padding(
+                                    padding: const EdgeInsets.all(16.0),
+                                  ),
+                                ]),
+
+                            new Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+
+                                  new OutlineButton(
+                                    onPressed: () {},
+                                    borderSide: BorderSide(
+                                      color: Colors.white, //Color of the border
+                                      style: BorderStyle.solid, //Style of the border
+                                      width: 1.2, //width of the border
+                                    ),
+                                    child:  new Column(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: <Widget>[
+
+                                          new Icon(
+                                            Icons.add,
+                                            color: Colors.white,
+                                            size: 35.0,
+                                          ),
+                                        ]),
+                                    shape: new CircleBorder(),
+
+                                    padding: const EdgeInsets.all(15.0),
+
+                                  ),
+                                  new Padding(
+                                    padding: const EdgeInsets.all(6.0),
+                                  ),
+                                  new Text(
+                                    "Share",
+                                    style: new TextStyle(fontSize: 16.0,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w800,
+                                        fontFamily: "Roboto"),
+                                  ),
+                                ]),
 
 
+                            new Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  new Padding(
+                                    padding: const EdgeInsets.all(16.0),
+                                  ),
+                                ]),
 
-                          ]
+                            new Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
 
-                      ),
+                                  new OutlineButton(
+                                    onPressed: () {},
+                                    borderSide: BorderSide(
+                                      color: Colors.green, //Color of the border
+                                      style: BorderStyle.solid, //Style of the border
+                                      width: 1.2, //width of the border
+                                    ),
+                                    child:  new Column(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: <Widget>[
 
+                                          new Icon(
+                                            Icons.refresh,
+                                            color: Colors.green,
+                                            size: 35.0,
+                                          ),
+                                        ]),
+                                    shape: new CircleBorder(),
+
+                                    padding: const EdgeInsets.all(15.0),
+
+                                  ),
+                                  new Padding(
+                                    padding: const EdgeInsets.all(6.0),
+                                  ),
+                                  new Text(
+                                    "Retry",
+                                    style: new TextStyle(fontSize: 16.0,
+                                        color: Colors.green,
+                                        fontWeight: FontWeight.w800,
+                                        fontFamily: "Roboto"),
+                                  ),
+                                ]),
+
+
+                          ]),
                     ]
 
                 ),
@@ -129,7 +268,7 @@ class ShareWidget extends StatelessWidget {
               padding: const EdgeInsets.all(0.0),
               alignment: Alignment.center,
               width: 1.7976931348623157e+308,
-              height: 460.0,
+              height: 590.0,
             ),
 
 

@@ -12,17 +12,25 @@ class PostWidget extends StatelessWidget {
   final String likeCount;
   final String description;
   final String songName;
+  final bool hasLiked;
 
   PostWidget({
-    String username, likeCount, description, songName
-  }): this.username = username, this.likeCount = likeCount, this.description = description, this.songName = songName;
+    String username, likeCount, description, songName, hasLiked
+  }): this.username = username, this.likeCount = likeCount, this.description = description, this.songName = songName, this.hasLiked = hasLiked;
 
 
 
 
   @override
   Widget build(BuildContext context){
-    return new Container(
+    return new GestureDetector(
+
+    onDoubleTap: () {
+    print("You liked this.");
+    },
+
+
+    child: new Container(
       child: new Card(key: null,
         color:  const Color(0xFF000000),
         child:
@@ -109,41 +117,53 @@ class PostWidget extends StatelessWidget {
                     ),
 
                   ]),
+
+
+                  ]),
+
+                ]),
+              new Padding(
+                padding: const EdgeInsets.all(5.0),
+              ),
               new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    new Padding(
-                      padding: const EdgeInsets.all(24.0),
-                    ),
 
+                    new Padding(
+                      padding: const EdgeInsets.symmetric(horizontal:30.0),
+                    ),
                     new Icon(
-                        Vibez.fire_solid,
-                        color: Colors.orange,
-                        size: 26.0),
+                        hasLiked ? Vibez.fire_solid : Vibez.fire_button,
+                        color: hasLiked ? Colors.orange : Colors.white,
+                        size: 30.0),
 
                     new Text(
                       " " + likeCount + " ",
-                      style: new TextStyle(fontSize:20.0,
+                      style: new TextStyle(fontSize:24.0,
                           color: const Color(0xFFFFFFFF),
-                          fontWeight: FontWeight.w300,
+                          fontWeight: FontWeight.w600,
                           fontFamily: "Roboto"),
                     ),
-                    new Text(
-                      "people liked this",
-                      style: new TextStyle(fontSize:20.0,
-                          color: const Color(0xFFFFFFFF),
-                          fontWeight: FontWeight.w300,
-                          fontFamily: "Roboto"),
-                    )
+                    new Padding(
+                      padding: const EdgeInsets.symmetric(horizontal:55.0),
+                    ),
+                    new Icon(
+                        Icons.save_alt,
+                        color: Colors.white,
+                        size: 30.0),
+                    new Padding(
+                      padding: const EdgeInsets.symmetric(horizontal:20.0),
+                    ),
+                    new Icon(
+                        Icons.send,
+                        color: Colors.white,
+                        size: 30.0),
                   ]
 
               ),
 
-                  ]),
-
-                ])
             ]
 
         ),
@@ -154,8 +174,10 @@ class PostWidget extends StatelessWidget {
       alignment: Alignment.center,
       width: 1.7976931348623157e+308,
       height: 690.0,
-          );
+          ));
   }
+
+
 }
 
 
@@ -239,7 +261,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
             // If the VideoPlayerController has finished initialization, use
             // the data it provides to limit the aspect ratio of the video.
             return AspectRatio(
-              aspectRatio: 0.63,
+              aspectRatio: 0.69,
               // Use the VideoPlayer widget to display the video.
               child: VideoPlayer(_controller),
             );

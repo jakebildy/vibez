@@ -62,9 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return new Scaffold(
         body: new GestureDetector(
 
-          onDoubleTap: () {
-            print("You liked this song.");
-          },
+          onHorizontalDragEnd: (DragEndDetails details) => _onHorizontalDrag(details),
 
           onLongPress: () {
             print("You gave a gem.");
@@ -221,6 +219,23 @@ class _MyHomePageState extends State<MyHomePage> {
         _gemCount--;
       }
     });
+  }
+
+  void _onHorizontalDrag(DragEndDetails details) {
+    if(details.primaryVelocity == 0) return; // user have just tapped on screen (no dragging)
+
+    if (details.primaryVelocity.compareTo(0) == -1) {
+      if (_currentIndex < 4) {
+        onTabTapped(_currentIndex + 1);
+        print('dragged from left');
+      }
+    }
+    else {
+      if (_currentIndex > 0) {
+        onTabTapped(_currentIndex - 1);
+        print('dragged from right');
+      }
+    }
   }
 }
 

@@ -14,16 +14,18 @@ class BroadcastWidget extends StatelessWidget {
   final Color color;
   final String location;
   final String imgUrl;
+  final String song;
 
   BroadcastWidget({
-    String username, description, icon, color, location, imgUrl
+    String username, description, icon, color, location, imgUrl, song
   })
       : this.username = username,
         this.description = description,
         this.icon = icon,
         this.color = color,
         this.location = location,
-        this.imgUrl = imgUrl;
+        this.imgUrl = imgUrl,
+        this.song = song;
 
 
 
@@ -62,17 +64,36 @@ class BroadcastWidget extends StatelessWidget {
               new Text(
                 username,
                 style: new TextStyle(fontSize: 16.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w800,
-                    fontFamily: "Roboto"),
-              ),
-              new Text(
-                location,
-                style: new TextStyle(fontSize: 16.0,
                     color: color,
                     fontWeight: FontWeight.w800,
                     fontFamily: "Roboto"),
               ),
+    new Row(
+    mainAxisAlignment: MainAxisAlignment.start,
+    mainAxisSize: MainAxisSize.max,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: <Widget>[
+      new Icon(
+          Icons.music_note,
+          color: Colors.white,
+          size: 21.0),
+              new Text(
+                song,
+                style: new TextStyle(fontSize: 14.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w800,
+                    fontFamily: "Roboto"),
+              ),
+
+              ]),
+              new Text(
+                location,
+                style: new TextStyle(fontSize: 12.0,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: "Roboto"),
+              ),
+
             ]));
   }
 }

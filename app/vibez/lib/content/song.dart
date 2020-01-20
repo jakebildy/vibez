@@ -4,25 +4,25 @@ import 'package:video_player/video_player.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import '../main.dart';
 
-/// Message Widget ///
+/// Song Widget ///
 
-class MessageWidget extends StatelessWidget {
+class SongWidget extends StatelessWidget {
 
-  final String username;
-  final String description;
+  final String name;
+  final String author;
   final IconData icon;
   final Color color;
-  final String timestamp;
+  final String album;
   final String imgUrl;
 
-  MessageWidget({
-    String username, description, icon, color, timestamp, imgUrl
+  SongWidget({
+    String name, author, icon, color, album, imgUrl
   })
-      : this.username = username,
-        this.description = description,
+      : this.name = name,
+        this.author = author,
         this.icon = icon,
         this.color = color,
-        this.timestamp = timestamp,
+        this.album = album,
         this.imgUrl = imgUrl;
 
 
@@ -60,7 +60,7 @@ class MessageWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       new Text(
-                        username,
+                        name,
                         style: new TextStyle(fontSize: 20.0,
                             color: const Color(0xFFFFFFFF),
                             fontWeight: FontWeight.w800,
@@ -69,23 +69,41 @@ class MessageWidget extends StatelessWidget {
                       new Padding(
                         padding: const EdgeInsets.all(2.0),
                       ),
-                      new Icon(
-                          Icons.verified_user,
-                          color: const Color(0xFF2cb3fb),
-                          size: 23.0),
+
 
                     ]),
                 new Padding(
                   padding: const EdgeInsets.all(3.0),
                 ),
+
+    new Row(
+    mainAxisAlignment: MainAxisAlignment.start,
+    mainAxisSize: MainAxisSize.max,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: <Widget>[
                 new Text(
-                  description,
+                  author,
                   style: new TextStyle(fontSize: 16.0,
-                      color: color,
-                      fontWeight: FontWeight.w400,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w800,
+                      fontFamily: "Roboto"),
+                ),
+                new Text(
+                  " • ",
+                  style: new TextStyle(fontSize: 16.0,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w800,
                       fontFamily: "Roboto"),
                 ),
 
+                new Text(
+                  album,
+                  style: new TextStyle(fontSize: 16.0,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w800,
+                      fontFamily: "Roboto"),
+                ),
+    ]),
               ]),
 
 
@@ -96,19 +114,16 @@ class MessageWidget extends StatelessWidget {
               children: <Widget>[
                 new Padding(
                   padding: const EdgeInsets.symmetric(
-                      vertical: 16, horizontal: 40.0),
+                      vertical: 16, horizontal: 20.0),
                 ),
 
-                new Text(
-                  timestamp,
-                  style: new TextStyle(fontSize: 10.0,
-                      color: Colors.grey,
-                      fontWeight: FontWeight.w800,
-                      fontFamily: "Roboto"),
-                ),
               ]),
           new Icon(
               icon,
+              color: color,
+              size: 40.0),
+          new Icon(
+              Icons.more_vert,
               color: color,
               size: 40.0),
         ]

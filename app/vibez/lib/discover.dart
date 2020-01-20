@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'vibez_icons.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'content/song.dart';
 
 class DiscoverWidget extends StatelessWidget {
 
@@ -45,6 +46,8 @@ class DiscoverWidget extends StatelessWidget {
                     ]
 
                 )),
+
+            new SongWidget(name: "Stick Talk", author: "Future", icon: Icons.play_circle_outline, color: Colors.pinkAccent, album: "DS2 (Deluxe)", imgUrl: 'https://images.complex.com/complex/image/upload/c_limit,dpr_auto,q_90,w_720/fl_lossy,pg_1/Screen_Shot_2015-07-17_at_2.45.32_PM_h5abhl.jpg',),
 
 
             ]));

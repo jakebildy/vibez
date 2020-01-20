@@ -63,11 +63,9 @@ class ActivityWidget extends StatelessWidget {
                       padding: const EdgeInsets.all(10.0),
                     ),
 
-                      new BroadcastWidget(username: "Harambe", color: Colors.yellowAccent, imgUrl: 'https://i.imgur.com/9lYUiGL.png', location: "Cincinnati, OH",),
-                      new BroadcastWidget(username: "Snoop Dogg", color: Colors.green, imgUrl: 'https://i.imgur.com/zRbQAba.png', location: "Los Angeles, CA"),
 
-
-
+                      new BroadcastWidget(username: "Harambe", color: Colors.yellowAccent, imgUrl: 'https://i.imgur.com/9lYUiGL.png', location: "Cincinnati, OH", song: "Wassup"),
+                      new BroadcastWidget(username: "Snoop Dogg", color: Colors.green, imgUrl: 'https://i.imgur.com/zRbQAba.png', location: "Los Angeles, CA", song: "Mask Off"),
 
                   ]
 
@@ -91,7 +89,7 @@ class ActivityWidget extends StatelessWidget {
                 new MessageWidget(username: "Yoda", description: "Yoda liked your song", icon:  Icons.music_note, color:  Colors.green, timestamp: "Yesterday", imgUrl: 'https://i.imgur.com/zSeMBiW.png',)
 
 
-              
+
 
             ]));
 
