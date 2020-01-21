@@ -48,6 +48,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int _gemCount = 4;
 
   int _currentIndex = 0;
+
+  PageController _pageController = PageController(initialPage: 0, keepPage: false);
+
   final List<Widget> _children = [
 
     HomeWidget(),
@@ -59,6 +62,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+
+
     return new Scaffold(
         body: new GestureDetector(
 
@@ -69,7 +75,16 @@ class _MyHomePageState extends State<MyHomePage> {
             onGemGiven();
           },
 
-          child: _children[_currentIndex],),
+          child: new PageView(
+              controller: _pageController,
+              onPageChanged: onPageChanged,
+              children: <Widget>[
+                _children[0],
+                _children[1],
+                _children[2],
+                _children[3],
+                _children[4],
+              ])),
 
 
         bottomNavigationBar: new Theme(
@@ -91,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
               currentIndex: _currentIndex,
               items: [
                 new BottomNavigationBarItem(
-                  icon: const Icon(Icons.home, size: 36,),
+                  icon: Icon(Icons.home, size: 38, color: _currentIndex == 0 ? Colors.orangeAccent : Colors.white,),
 
                   title: new Text('Home'),
                 ),
@@ -102,8 +117,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     badgeContent: Text(
                         '3', style: TextStyle(color: Colors.white)),
                     child: _currentIndex == 1
-                        ? const Icon(Vibez.fire_solid, size: 33,)
-                        : const Icon(Vibez.fire_button, size: 33,),
+                        ? const Icon(Vibez.fire_solid, size: 33, color: Colors.orangeAccent)
+                        : const Icon(Vibez.fire_button, size: 33, color: Colors.white),
                   ),
                   title: new Text('Activity'),
                 ),
@@ -112,8 +127,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 new BottomNavigationBarItem(
                     icon: InkWell(
                       child: Icon(
-                        Vibez.share_icon,
-                        // color: green,
+                        Icons.add_circle,
+                        color: _currentIndex == 2 ? Colors.orangeAccent : Colors.white,
                         // size: 40.0,
                         size: 35,
                       ),
@@ -122,14 +137,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
 
                 new BottomNavigationBarItem(
-                  icon: const Icon(Vibez.vinyl_icon, size: 34,),
+                  icon:  Icon(Icons.music_note, size: 34, color: _currentIndex == 3 ? Colors.orangeAccent : Colors.white,),
                   title: new Text('Library'),
                 ),
 
                 new BottomNavigationBarItem(
                   icon: _currentIndex == 4
-                      ? const Icon(Icons.person, size: 34,)
-                      : const Icon(Icons.perm_identity, size: 34,),
+                      ? const Icon(Icons.person, size: 34, color: Colors.orangeAccent)
+                      : const Icon(Icons.perm_identity, size: 34, color: Colors.white),
 
                   title: new Text('Me'),
 
@@ -208,6 +223,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void onTabTapped(int index) {
+
+
+    _pageController.jumpToPage(index);
+
     setState(() {
       _currentIndex = index;
     });
@@ -219,6 +238,13 @@ class _MyHomePageState extends State<MyHomePage> {
         _gemCount--;
       }
     });
+  }
+
+  void onPageChanged(int page) {
+    setState(() {
+      this._currentIndex = page;
+    });
+
   }
 
   void _onHorizontalDrag(DragEndDetails details) {
