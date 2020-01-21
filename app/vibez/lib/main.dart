@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           onLongPress: () {
             print("You gave a gem.");
-            onGemGiven();
+            //onGemGiven();
           },
 
           child: new PageView(

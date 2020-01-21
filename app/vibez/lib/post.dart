@@ -5,9 +5,12 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'main.dart';
 import 'util/util.dart';
 
+
 /// Post Widget ///
 
-class PostWidget extends StatelessWidget {
+
+class PostWidget extends StatefulWidget {
+
 
   final String username;
   final String likeCount;
@@ -24,15 +27,53 @@ class PostWidget extends StatelessWidget {
 
 
 
+  @override
+  _PostWidgetState createState() => _PostWidgetState(username: username, likeCount: likeCount, description: description, songName: songName, artistName: artistName, hasLiked: hasLiked, video: video, style:style);
+}
+
+class _PostWidgetState extends State<PostWidget> {
+
+  final String username;
+  final String likeCount;
+  final String description;
+  final String songName;
+  final String artistName;
+  final bool hasLiked;
+  final String video;
+  final PostStyle style;
+
+  bool _liked = false;
+  bool _donated = false;
+
+  _PostWidgetState({
+    String username, likeCount, description, songName, artistName, hasLiked, video, style
+  }): this.username = username, this.likeCount = likeCount, this.description = description, this.songName = songName, this.artistName = artistName, this.hasLiked = hasLiked, this.video = video, this.style = style, this._liked = hasLiked;
+
+
+
+
 
   @override
   Widget build(BuildContext context){
+
+
+
     return new GestureDetector(
 
     onDoubleTap: () {
     print("You liked this.");
+    setState(() {
+      _liked = !_liked;
+    });
+
     },
 
+    onLongPress: () {
+      setState(() {
+        _donated = !_donated;
+      });
+
+    },
 
     child: new Container(
       child: new Card(key: null,
@@ -93,12 +134,56 @@ class PostWidget extends StatelessWidget {
             children: <Widget>[
               new VideoPlayerScreen(video: video),
               new Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+
+                    new Padding(
+                      padding: const EdgeInsets.all(110.0),
+                    ),
+                    new Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          AnimatedOpacity(
+                            // If the widget is visible, animate to 0.0 (invisible).
+                            // If the widget is hidden, animate to 1.0 (fully visible).
+                            opacity: _donated ? 0.0 : 1.0,
+                            duration: Duration(milliseconds: 700),
+                              child: new Image.network(
+                                _donated ? 'https://i.imgur.com/7e317PJ.png' : '',
+                                      fit: BoxFit.fitWidth,
+                                      width: 140.0,
+                                      height: 140.0,
+                                    ),
+                          ),
+                          ])
+              ]),
+              new Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
+
+                    new Padding(
+                      padding: const EdgeInsets.all(110.0),
+                    ),
+
+                    AnimatedOpacity(
+                      // If the widget is visible, animate to 0.0 (invisible).
+                      // If the widget is hidden, animate to 1.0 (fully visible).
+                        opacity: _liked ? 0.0 : 1.0,
+                        duration: Duration(milliseconds: 700),
+                        child:
+                    new Icon(
+                        _liked ? Vibez.fire_solid : null,
+                        color: Colors.orange,
+                        size: 120.0),
+                    ),
               new Padding(
-                padding: const EdgeInsets.all(230.0),
+                padding: const EdgeInsets.all(60.0),
               ),
 
               new Row(
@@ -149,12 +234,12 @@ class PostWidget extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal:30.0),
                     ),
                     new Icon(
-                        hasLiked ? Vibez.fire_solid : Vibez.fire_button,
-                        color: hasLiked ? Colors.orange : Colors.white,
+                        _liked ? Vibez.fire_solid : Vibez.fire_button,
+                        color: _liked ? Colors.orange : Colors.white,
                         size: 30.0),
 
                     new Text(
-                      " " + likeCount + " ",
+                      _liked ? " " + (int.parse(likeCount)+1).toString() + " " : " " + likeCount + " "  ,
                       style: new TextStyle(fontSize:24.0,
                           color: const Color(0xFFFFFFFF),
                           fontWeight: FontWeight.w600,

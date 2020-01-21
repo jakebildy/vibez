@@ -14,6 +14,7 @@ class HomeWidget extends StatelessWidget {
 
               new PostWidget(username: "jake", likeCount: "420", description: "5 hours ago, at a party", songName: "Make No Sense", artistName: "Young Boy",  hasLiked: false, video: "assets/makenosense.mp4", style: PostStyle.essex),
               new PostWidget(username: "jake", likeCount: "69",description: "10 hours ago, just chilling",songName: "IN THE AIR TONIGHT", artistName: "PHIL COLLINS", hasLiked: true, video: "assets/phil.mp4", style: PostStyle.telegraph),
+              new PostWidget(username: "jake", likeCount: "69419",description: "12 hours ago, just chilling",songName: "IN THE AIR TONIGHT", artistName: "PHIL COLLINS", hasLiked: false, video: "assets/phil.mp4", style: PostStyle.essex),
 
         ],
           scrollDirection: Axis.vertical,),
