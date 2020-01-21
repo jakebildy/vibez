@@ -3,6 +3,7 @@ import 'vibez_icons.dart';
 import 'package:video_player/video_player.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'main.dart';
+import 'util/util.dart';
 
 /// Post Widget ///
 
@@ -12,11 +13,14 @@ class PostWidget extends StatelessWidget {
   final String likeCount;
   final String description;
   final String songName;
+  final String artistName;
   final bool hasLiked;
+  final String video;
+  final PostStyle style;
 
   PostWidget({
-    String username, likeCount, description, songName, hasLiked
-  }): this.username = username, this.likeCount = likeCount, this.description = description, this.songName = songName, this.hasLiked = hasLiked;
+    String username, likeCount, description, songName, artistName, hasLiked, video, style
+  }): this.username = username, this.likeCount = likeCount, this.description = description, this.songName = songName, this.artistName = artistName, this.hasLiked = hasLiked, this.video = video, this.style = style;
 
 
 
@@ -87,38 +91,48 @@ class PostWidget extends StatelessWidget {
               ),
         Stack(
             children: <Widget>[
-              new VideoPlayerScreen(),
+              new VideoPlayerScreen(video: video),
               new Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
               new Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(230.0),
               ),
 
-              new Padding(
-                padding: const EdgeInsets.all(255.0),
-              ),
               new Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    new Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                    ),
+
                     new Text(
                       songName,
-                      style: new TextStyle(fontSize:20.0,
-                          color: const Color(0xFFFFFFFF),
-                          fontWeight: FontWeight.w800,
-                          fontFamily: "Roboto"),
+                      style: new TextStyle(fontSize: style==PostStyle.telegraph ? 25.0 : 60.0,
+                          color: Colors.white,
+                          fontFamily: style==PostStyle.telegraph ? "Flowers" : "Bombing"
+                      ),
                     ),
 
                   ]),
+              new Padding(
+                padding: style==PostStyle.telegraph ? const EdgeInsets.all(14.0) : const EdgeInsets.all(0),
+              ),
+              new Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    new Text(
+                      artistName,
+                      style: new TextStyle(fontSize: style==PostStyle.telegraph ? 20.0 : 30,
+                          color: const Color(0xFFFFFFFF),
+                          fontFamily: style==PostStyle.telegraph ? "Flowers" : "Whoa"
+                      ),
+                    ),
 
-
+                  ]),
                   ]),
 
                 ]),
@@ -220,15 +234,28 @@ void choiceAction(String choice) {
 }
 
 class VideoPlayerScreen extends StatefulWidget {
-  VideoPlayerScreen({Key key}) : super(key: key);
+
+  final String video;
+
+  VideoPlayerScreen({
+    String video
+  }): this.video = video;
+
+
 
   @override
-  _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
+  _VideoPlayerScreenState createState() => _VideoPlayerScreenState(video: video);
 }
 
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   VideoPlayerController _controller;
   Future<void> _initializeVideoPlayerFuture;
+
+  final String video;
+
+  _VideoPlayerScreenState({
+    String video
+  }): this.video = video;
 
   @override
   void initState() {
@@ -236,7 +263,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     // offers several different constructors to play videos from assets, files,
     // or the internet.
     _controller = VideoPlayerController.asset(
-      'assets/phil.mp4',
+        video,
     );
 
     _initializeVideoPlayerFuture = _controller.initialize();

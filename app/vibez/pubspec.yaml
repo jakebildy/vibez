@@ -60,11 +60,20 @@ flutter:
   # example:
   assets:
       - assets/phil.mp4
+      - assets/makenosense.mp4
   fonts:
       - family: Vibez
         fonts:
           - asset: fonts/Vibez.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+      - family: Bombing
+        fonts:
+          - asset: fonts/Bombing.ttf
+      - family: Whoa
+        fonts:
+          - asset: fonts/whoa!.ttf
+      - family: Flowers
+        fonts:
+          - asset: fonts/Flowers Kingdom.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

@@ -6,7 +6,7 @@ import 'share.dart';
 import 'discover.dart';
 import 'activity.dart';
 import 'package:badges/badges.dart';
-import 'util.dart';
+import 'post.dart';
 
 
 void main() {
