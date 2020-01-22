@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'vibez_icons.dart';
+import 'settings.dart';
+import 'package:flutter/cupertino.dart';
 
 class ProfileWidget extends StatelessWidget {
 
@@ -223,7 +225,7 @@ class ProfileWidget extends StatelessWidget {
               new Padding(
                 padding: const EdgeInsets.all(16.0),
               ),
-              new Divider(color: Colors.white),
+
               new Padding(
                 padding: const EdgeInsets.all(5.0),
               ),
@@ -253,7 +255,7 @@ class ProfileWidget extends StatelessWidget {
                           children: <Widget>[
 
                             new Icon(
-                              Icons.graphic_eq,
+                              Icons.edit,
                               color: Colors.pink,
                               size: 35.0,
                             ),
@@ -267,7 +269,7 @@ class ProfileWidget extends StatelessWidget {
                       padding: const EdgeInsets.all(6.0),
                     ),
                     new Text(
-                      "Broadcast",
+                      "Edit Profile",
                       style: new TextStyle(fontSize: 16.0,
                           color: Colors.pink,
                           fontWeight: FontWeight.w800,
@@ -305,7 +307,7 @@ mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
 
                   new Icon(
-                    Icons.edit,
+                    Icons.graphic_eq,
                     color: Colors.white,
                     size: 35.0,
                   ),
@@ -319,7 +321,7 @@ mainAxisAlignment: MainAxisAlignment.start,
             padding: const EdgeInsets.all(6.0),
           ),
           new Text(
-            "Edit Profile",
+            "Broadcast",
             style: new TextStyle(fontSize: 16.0,
                 color: Colors.white,
                 fontWeight: FontWeight.w800,
@@ -345,7 +347,12 @@ mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
 
           new OutlineButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (context) => SettingsWidget()),
+              );
+            },
             borderSide: BorderSide(
               color: Colors.green, //Color of the border
               style: BorderStyle.solid, //Style of the border
@@ -358,7 +365,7 @@ mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
 
                   new Icon(
-                    Icons.more_horiz,
+                    Icons.settings,
                     color: Colors.green,
                     size: 35.0,
                   ),
@@ -372,7 +379,7 @@ mainAxisAlignment: MainAxisAlignment.start,
             padding: const EdgeInsets.all(6.0),
           ),
           new Text(
-            "More",
+            "Settings",
             style: new TextStyle(fontSize: 16.0,
                 color: Colors.green,
                 fontWeight: FontWeight.w800,
@@ -382,15 +389,6 @@ mainAxisAlignment: MainAxisAlignment.start,
 
 
                   ]),
-
-
-              new Padding(
-                padding: const EdgeInsets.all(13),
-              ),
-              new Divider(color: Colors.white),
-              new Padding(
-                padding: const EdgeInsets.all(8.1),
-              ),
 
 
             ]));

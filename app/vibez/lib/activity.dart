@@ -15,6 +15,7 @@ class ActivityWidget extends StatelessWidget {
               new Card(key: null,
                   color: const Color(0xFF090909),
                   child:
+
                   new Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       mainAxisSize: MainAxisSize.max,
