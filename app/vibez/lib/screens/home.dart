@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'vibez_icons.dart';
-import 'post.dart';
-import 'util/util.dart';
+import 'package:vibez/util/vibez_icons.dart';
+import 'package:vibez/content/post.dart';
+import 'package:vibez/util/util.dart';
 
 class HomeWidget extends StatelessWidget {
 

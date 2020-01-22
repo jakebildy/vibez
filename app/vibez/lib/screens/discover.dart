@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'vibez_icons.dart';
+import 'package:vibez/util/vibez_icons.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'content/song.dart';
+import 'package:vibez/content/song.dart';
 
 class DiscoverWidget extends StatelessWidget {
 

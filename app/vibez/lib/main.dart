@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'vibez_icons.dart';
-import 'profile.dart';
-import 'home.dart';
-import 'share.dart';
-import 'discover.dart';
-import 'activity.dart';
+import 'package:vibez/util/vibez_icons.dart';
+import 'package:vibez/screens/profile.dart';
+import 'package:vibez/screens/home.dart';
+import 'package:vibez/screens/share.dart';
+import 'package:vibez/screens/discover.dart';
+import 'package:vibez/screens/activity.dart';
 import 'package:badges/badges.dart';
-import 'post.dart';
+import 'package:vibez/content/post.dart';
 
 
 void main() {

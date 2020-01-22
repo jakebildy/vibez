@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "546288039651",
+    "firebase_url": "https://vibez-app.firebaseio.com",
+    "project_id": "vibez-app",
+    "storage_bucket": "vibez-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546288039651:android:1a8e8c00418ce9b77e77d6",
+        "android_client_info": {
+          "package_name": "com.vibez.vibez"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "546288039651-a1ret59aq83afe7j6nb6e53omvflvnb4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDGUqFxDnlNYxklAsBG9E636vGInJl32c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "546288039651-a1ret59aq83afe7j6nb6e53omvflvnb4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

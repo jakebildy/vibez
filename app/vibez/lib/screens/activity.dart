@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'vibez_icons.dart';
-import 'content/message.dart';
-import 'content/broadcast.dart';
+import 'package:vibez/util/vibez_icons.dart';
+import 'package:vibez/content/message.dart';
+import 'package:vibez/content/broadcast.dart';
 
 class ActivityWidget extends StatelessWidget {
 

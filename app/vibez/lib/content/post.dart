@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'vibez_icons.dart';
+import 'package:vibez/util/vibez_icons.dart';
 import 'package:video_player/video_player.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'main.dart';
-import 'util/util.dart';
+import 'package:vibez/main.dart';
+import 'package:vibez/util/util.dart';
 
 
 /// Post Widget ///

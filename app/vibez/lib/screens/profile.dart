@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'vibez_icons.dart';
-import 'settings.dart';
+import 'package:vibez/util/vibez_icons.dart';
+import 'package:vibez/screens/settings.dart';
 import 'package:flutter/cupertino.dart';
 
 class ProfileWidget extends StatelessWidget {
