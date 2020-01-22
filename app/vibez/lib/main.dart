@@ -7,6 +7,7 @@ import 'package:vibez/screens/discover.dart';
 import 'package:vibez/screens/activity.dart';
 import 'package:badges/badges.dart';
 import 'package:vibez/content/post.dart';
+import 'package:vibez/util/wrapper.dart';
 
 
 void main() {
@@ -57,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ActivityWidget(),
     ShareWidget(),
     DiscoverWidget(),
-    ProfileWidget(username: "Jake"),
+    Wrapper(),
   ];
 
   @override
@@ -309,7 +310,7 @@ class DataSearch extends SearchDelegate<String>{
   @override
   Widget buildResults(BuildContext context) {
     // show some result based on the selection
-    return ProfileWidget(username: query);
+    return ProfileWidget();
 
   }
 

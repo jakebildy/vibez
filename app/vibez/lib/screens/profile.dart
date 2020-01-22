@@ -5,12 +5,6 @@ import 'package:flutter/cupertino.dart';
 
 class ProfileWidget extends StatelessWidget {
 
-  final String username;
-
-  ProfileWidget({
-    String username
-  }): this.username = username;
-
 
 
   @override
@@ -61,7 +55,7 @@ class ProfileWidget extends StatelessWidget {
                 padding: const EdgeInsets.all(20.0),
               ),
               new Text(
-                username,
+                "Jake",
                 style: new TextStyle(fontSize: 30.0,
                     color: Colors.white,
                     fontWeight: FontWeight.w800,
