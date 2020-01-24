@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:vibez/services/auth.dart';
 
-class SignIn extends StatefulWidget {
+
+
+class Register extends StatefulWidget {
   @override
-  _SignInState createState() => _SignInState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _SignInState extends State<SignIn> {
-
-  final AuthService _auth = AuthService();
+class _RegisterState extends State<Register> {
 
   // text field state
   String email = '';
@@ -27,14 +27,14 @@ class _SignInState extends State<SignIn> {
             TextField(
                 style: new TextStyle(color: Colors.green),
                 decoration: new InputDecoration(
-                    hintText: "Enter your email",
+                  hintText: "Enter your email",
                   hintStyle: new TextStyle(
                       color: Colors.grey
                   ),
-                    labelText: "Email",
-                    labelStyle: new TextStyle(
-                        color: Colors.white
-                    ),
+                  labelText: "Email",
+                  labelStyle: new TextStyle(
+                      color: Colors.white
+                  ),
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.green),
                   ),
@@ -50,14 +50,14 @@ class _SignInState extends State<SignIn> {
             TextField(
                 style: new TextStyle(color: Colors.white),
                 decoration: new InputDecoration(
-                    hintText: "Enter your password",
-                    hintStyle: new TextStyle(
-                    color: Colors.grey
-                ),
-                    labelText: "Password",
-                    labelStyle: new TextStyle(
-                        color: Colors.white
-                    ),
+                  hintText: "Enter your password",
+                  hintStyle: new TextStyle(
+                      color: Colors.grey
+                  ),
+                  labelText: "Password",
+                  labelStyle: new TextStyle(
+                      color: Colors.white
+                  ),
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.green),
                   ),
@@ -67,18 +67,18 @@ class _SignInState extends State<SignIn> {
                 ),
                 obscureText: true,
                 onChanged: (val) {
-                    setState(() => password = val);
+                  setState(() => password = val);
                 }
             ),
             SizedBox(height: 30),
             RaisedButton(
               color: Colors.green,
               child: Text(
-                'Sign In',
-                  style: new TextStyle(fontSize: 14.0,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                  fontFamily: "Roboto"),
+                'Register',
+                style: new TextStyle(fontSize: 14.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: "Roboto"),
               ),
               onPressed: () async {
                 print(email);
