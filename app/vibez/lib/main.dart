@@ -8,7 +8,9 @@ import 'package:vibez/screens/activity.dart';
 import 'package:badges/badges.dart';
 import 'package:vibez/content/post.dart';
 import 'package:vibez/util/wrapper.dart';
-
+import 'package:provider/provider.dart';
+import 'package:vibez/services/auth.dart';
+import 'package:vibez/models/user.dart';
 
 void main() {
 
@@ -22,17 +24,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Vibez',
-      debugShowCheckedModeBanner: false,
-      theme: new ThemeData(
-        primarySwatch: Colors.cyan,
-        primaryColor: const Color(0xFF00bcd4),
-        accentColor: const Color(0xFF00bcd4),
-        canvasColor: const Color(0xFF090909),
-        fontFamily: 'Roboto',
+
+    return StreamProvider<User>.value(
+      value: AuthService().user,
+      child: new MaterialApp(
+        title: 'Vibez',
+        debugShowCheckedModeBanner: false,
+        theme: new ThemeData(
+          primarySwatch: Colors.cyan,
+          primaryColor: const Color(0xFF00bcd4),
+          accentColor: const Color(0xFF00bcd4),
+          canvasColor: const Color(0xFF090909),
+          fontFamily: 'Roboto',
+        ),
+        home: new MyHomePage(),
       ),
-      home: new MyHomePage(),
     );
   }
 }

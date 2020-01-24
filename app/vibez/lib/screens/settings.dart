@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:vibez/util/vibez_icons.dart';
+import 'package:vibez/services/auth.dart';
 
 class SettingsWidget extends StatelessWidget {
 
-
+ final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -276,14 +277,19 @@ class SettingsWidget extends StatelessWidget {
                               new Padding(
                                 padding: const EdgeInsets.all(10.0),
                               ),
+                              new MaterialButton(onPressed: () async {
 
-                              new Text(
+                                print("Signing out...");
+                                await _auth.signOut();
+                                Navigator.pop(context,true);
+                              },
+                              child: new Text(
                                 " Log Out",
                                 style: new TextStyle(fontSize: 18.0,
                                     color: Colors.grey,
                                     fontWeight: FontWeight.w600,
                                     fontFamily: "Roboto"),
-                              ),
+                              )),
                             ]),
 
                         new Padding(
