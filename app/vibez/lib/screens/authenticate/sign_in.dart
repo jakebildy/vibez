@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vibez/services/auth.dart';
 
+
+
 class SignIn extends StatefulWidget {
   @override
   _SignInState createState() => _SignInState();
@@ -13,6 +15,7 @@ class _SignInState extends State<SignIn> {
   // text field state
   String email = '';
   String password = '';
+  String error = '';
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +30,14 @@ class _SignInState extends State<SignIn> {
             TextField(
                 style: new TextStyle(color: Colors.green),
                 decoration: new InputDecoration(
-                    hintText: "Enter your email",
+                  hintText: "Enter your email",
                   hintStyle: new TextStyle(
                       color: Colors.grey
                   ),
-                    labelText: "Email",
-                    labelStyle: new TextStyle(
-                        color: Colors.white
-                    ),
+                  labelText: "Email",
+                  labelStyle: new TextStyle(
+                      color: Colors.white
+                  ),
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.green),
                   ),
@@ -50,14 +53,14 @@ class _SignInState extends State<SignIn> {
             TextField(
                 style: new TextStyle(color: Colors.white),
                 decoration: new InputDecoration(
-                    hintText: "Enter your password",
-                    hintStyle: new TextStyle(
-                    color: Colors.grey
-                ),
-                    labelText: "Password",
-                    labelStyle: new TextStyle(
-                        color: Colors.white
-                    ),
+                  hintText: "Enter your password",
+                  hintStyle: new TextStyle(
+                      color: Colors.grey
+                  ),
+                  labelText: "Password",
+                  labelStyle: new TextStyle(
+                      color: Colors.white
+                  ),
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.green),
                   ),
@@ -67,24 +70,52 @@ class _SignInState extends State<SignIn> {
                 ),
                 obscureText: true,
                 onChanged: (val) {
-                    setState(() => password = val);
+                  setState(() => password = val);
                 }
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 60),
+            RaisedButton(
+              color: Colors.green,
+              child: Text(
+                'Register',
+                style: new TextStyle(fontSize: 14.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: "Roboto"),
+              ),
+              onPressed: () async {
+
+                dynamic result = await _auth.registerWithEmailAndPassword(email, password);
+                if (result == null){
+                  setState(() => error = 'Please supply a valid email');
+                }
+              },
+            ),
+            SizedBox(height: 12, ),
             RaisedButton(
               color: Colors.green,
               child: Text(
                 'Sign In',
-                  style: new TextStyle(fontSize: 14.0,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                  fontFamily: "Roboto"),
+                style: new TextStyle(fontSize: 14.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: "Roboto"),
               ),
               onPressed: () async {
-                print(email);
-                print(password);
+                dynamic result = await _auth.signInWithEmailAndPassword(email, password);
+                if (result == null){
+                  setState(() => error = 'Incorrect email or passord');
+                }
               },
-            )
+            ),
+            SizedBox(height: 12, ),
+            Text(
+              error,
+              style: new TextStyle(fontSize: 14.0,
+                  color: Colors.red,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: "Roboto"),
+            ),
           ],
         ),
       ),

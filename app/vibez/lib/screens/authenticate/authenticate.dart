@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:vibez/screens/authenticate/sign_in.dart';
-import 'package:vibez/screens/authenticate/register.dart';
 
 class Authenticate extends StatefulWidget {
 
@@ -13,7 +12,7 @@ class Authenticate extends StatefulWidget {
   @override
     Widget build(BuildContext context){
     return Container(
-      child: Register(),
+      child: SignIn(),
     );
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:vibez/models/user.dart';
 import 'package:vibez/util/vibez_icons.dart';
 import 'package:vibez/services/auth.dart';
 
@@ -8,6 +10,7 @@ class SettingsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return new Scaffold(
         body:
         new Column(
@@ -117,6 +120,51 @@ class SettingsWidget extends StatelessWidget {
                                     fontWeight: FontWeight.w600,
                                     fontFamily: "Roboto"),
                               ),
+
+                            ]),
+
+                        new Padding(
+                          padding: const EdgeInsets.all(5.0),
+                        ),
+                      ])),
+
+              new Card(key: null,
+                  color: const Color(0xFF1c1c1c),
+                  child:
+                  new Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+
+                        new Padding(
+                          padding: const EdgeInsets.all(5.0),
+                        ),
+                        new Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+
+                              new Padding(
+                                padding: const EdgeInsets.all(10.0),
+                              ),
+                              new Text(
+                                "Email: ",
+                                style: new TextStyle(fontSize: 18.0,
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w300,
+                                    fontFamily: "Roboto"),
+                              ),
+
+                              new Text(
+                                Provider.of<User>(context).email,
+                                style: new TextStyle(fontSize: 18.0,
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w800,
+                                    fontFamily: "Roboto"),
+                              ),
+
                             ]),
 
                         new Padding(
