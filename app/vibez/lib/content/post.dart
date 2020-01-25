@@ -231,11 +231,11 @@ class _PostWidgetState extends State<PostWidget> {
                   children: <Widget>[
 
                     new Padding(
-                      padding: const EdgeInsets.symmetric(horizontal:30.0),
+                      padding: const EdgeInsets.symmetric(horizontal:15.0),
                     ),
                     new Icon(
                         _liked ? Vibez.fire_solid : Vibez.fire_button,
-                        color: _liked ? Colors.orange : Colors.white,
+                        color: _liked ? Colors.orange : Colors.orange,
                         size: 30.0),
 
                     new Text(
@@ -245,12 +245,28 @@ class _PostWidgetState extends State<PostWidget> {
                           fontWeight: FontWeight.w600,
                           fontFamily: "Roboto"),
                     ),
+
                     new Padding(
-                      padding: const EdgeInsets.symmetric(horizontal:55.0),
+                      padding: const EdgeInsets.symmetric(horizontal:10.0),
+                    ),
+                    new Icon(
+                        Icons.autorenew,
+                        color: Colors.pinkAccent,
+                        size: 30.0),
+
+                    new Text(
+                     "2.7k"  ,
+                      style: new TextStyle(fontSize:24.0,
+                          color: const Color(0xFFFFFFFF),
+                          fontWeight: FontWeight.w600,
+                          fontFamily: "Roboto"),
+                    ),
+                    new Padding(
+                      padding: const EdgeInsets.symmetric(horizontal:25.0),
                     ),
                     new Icon(
                         Icons.save_alt,
-                        color: Colors.white,
+                        color: Colors.green,
                         size: 30.0),
                     new Padding(
                       padding: const EdgeInsets.symmetric(horizontal:20.0),

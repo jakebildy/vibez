@@ -5,9 +5,4 @@ class User {
 
   User({this.uid, this.email});
 
-}  //auth change user s
-
-
-String get email {
-  return email;
 }
