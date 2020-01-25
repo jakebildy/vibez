@@ -275,6 +275,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class DataSearch extends SearchDelegate<String>{
 
+  @override
+  ThemeData appBarTheme(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+    return theme.copyWith(
+      primaryColor: Colors.black,
+      primaryIconTheme: theme.primaryIconTheme,
+        textTheme: theme.textTheme.copyWith(title: theme.textTheme.title.copyWith(color: Colors.white))
+    );
+  }
+
   final users = [
     "jake",
     "hayden",
@@ -296,9 +306,10 @@ class DataSearch extends SearchDelegate<String>{
   @override
   List<Widget> buildActions(BuildContext context) {
     // actions for app bar
-    return [IconButton(icon: Icon(Icons.clear), onPressed: () {
+    return [IconButton(icon: Icon(Icons.clear, color: Colors.white,size: 30,), onPressed: () {
       query = "";
-    })];
+    }),
+    ];
   }
 
   @override
@@ -307,6 +318,8 @@ class DataSearch extends SearchDelegate<String>{
     return IconButton(
         icon: AnimatedIcon(
             icon: AnimatedIcons.menu_arrow,
+            size: 30,
+            color: Colors.white,
             progress: transitionAnimation,
         ), onPressed: (){
           close(context, null);
@@ -333,13 +346,13 @@ class DataSearch extends SearchDelegate<String>{
         showResults(context);
       },
 
-      leading: Icon(Icons.person),
+      leading: Icon(Icons.person, color: Colors.white,),
       title : RichText(text: TextSpan(
         text: suggestionList[index].substring(0,query.length),
-        style: TextStyle(color: Colors.black, fontWeight : FontWeight.bold),
+        style: TextStyle(color: Colors.white, fontWeight : FontWeight.bold, fontSize: 20),
       children: [TextSpan(
         text: suggestionList[index].substring(query.length),
-        style: TextStyle(color: Colors.grey)
+        style: TextStyle(color: Colors.green, fontSize: 20)
       )]
       )
       )),
