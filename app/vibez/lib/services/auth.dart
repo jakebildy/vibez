@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:vibez/models/user.dart';
+import 'package:vibez/services/database.dart';
 
 class AuthService {
 
@@ -51,6 +52,9 @@ class AuthService {
     try {
       AuthResult result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       FirebaseUser user = result.user;
+
+      //create a new document for the user with the uid
+      await DatabaseService(uid: user.uid).updateUserData(email.split('@')[0], 'User', 0, 0, '', false, 'No bio added yet');
       return _userFromFirebaseUser(user);
 
     } catch (e) {

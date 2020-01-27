@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:vibez/util/vibez_icons.dart';
 import 'package:vibez/screens/settings.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:vibez/services/database.dart';
+import 'package:vibez/models/userdata.dart';
 
 class ProfileWidget extends StatelessWidget {
 
@@ -9,6 +12,9 @@ class ProfileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final UserData userData = Provider.of<List<UserData>>(context)[0];
+
     return new Scaffold(
         body:
         new Column(
@@ -16,8 +22,6 @@ class ProfileWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-
-
 
 
               Stack(
@@ -55,7 +59,7 @@ class ProfileWidget extends StatelessWidget {
                 padding: const EdgeInsets.all(20.0),
               ),
               new Text(
-                "Jake",
+                userData.displayName,
                 style: new TextStyle(fontSize: 30.0,
                     color: Colors.white,
                     fontWeight: FontWeight.w800,
@@ -76,7 +80,7 @@ class ProfileWidget extends StatelessWidget {
                       padding: const EdgeInsets.all(20.0),
                     ),
                     new Text(
-                      "Artist",
+                      userData.userType,
                       style: new TextStyle(fontSize: 23.0,
                           color: Colors.white,
                           fontWeight: FontWeight.w600,
@@ -125,7 +129,7 @@ class ProfileWidget extends StatelessWidget {
                                   height: 20.0,
                                 ),
                                 new Text(
-                                  "190",
+                                  userData.gemsGiven.toString(),
                                   style: new TextStyle(fontSize: 20.0,
                                       color: Colors.white,
                                       fontWeight: FontWeight.w400,
@@ -209,7 +213,7 @@ class ProfileWidget extends StatelessWidget {
                 padding: const EdgeInsets.all(14.0),
               ),
               new Text(
-                "Bios are for people who need an explanation",
+                userData.description,
                 style: new TextStyle(fontSize: 16.0,
                     color: Colors.white,
                     fontWeight: FontWeight.w300,
@@ -249,7 +253,7 @@ class ProfileWidget extends StatelessWidget {
                           children: <Widget>[
 
                             new Icon(
-                              Icons.edit,
+                              Icons.music_note,
                               color: Colors.pink,
                               size: 35.0,
                             ),
@@ -263,7 +267,7 @@ class ProfileWidget extends StatelessWidget {
                       padding: const EdgeInsets.all(6.0),
                     ),
                     new Text(
-                      "Edit Profile",
+                      "Songs",
                       style: new TextStyle(fontSize: 16.0,
                           color: Colors.pink,
                           fontWeight: FontWeight.w800,

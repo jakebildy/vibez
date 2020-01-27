@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:vibez/models/userdata.dart';
 import 'package:vibez/util/vibez_icons.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -8,6 +10,10 @@ class ShareWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final UserData userData = Provider.of<List<UserData>>(context)[0];
+
+
     return new Scaffold(
       body:
       new ListView(
@@ -75,7 +81,7 @@ class ShareWidget extends StatelessWidget {
                               padding: const EdgeInsets.all(4.0),
                             ),
                             new Text(
-                              "jake",
+                              userData.displayName,
                               style: new TextStyle(fontSize:17.0,
                                   color: Colors.white,
                                   fontWeight: FontWeight.w800,
@@ -87,14 +93,6 @@ class ShareWidget extends StatelessWidget {
                                 color: const Color(0xFF2cb3fb),
                                 size: 23.0),
 
-                            new Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 124.0),
-                            ),
-
-                            new Icon(
-                                Icons.more_vert,
-                                color: Colors.white,
-                                size: 27.0)
                           ]
 
                       ),

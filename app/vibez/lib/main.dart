@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vibez/services/database.dart';
 import 'package:vibez/util/vibez_icons.dart';
 import 'package:vibez/screens/profile.dart';
 import 'package:vibez/screens/home.dart';
@@ -11,6 +12,8 @@ import 'package:vibez/util/wrapper.dart';
 import 'package:provider/provider.dart';
 import 'package:vibez/services/auth.dart';
 import 'package:vibez/models/user.dart';
+
+import 'models/userdata.dart';
 
 void main() {
 
@@ -27,19 +30,21 @@ class MyApp extends StatelessWidget {
 
     return StreamProvider<User>.value(
       value: AuthService().user,
-      child: new MaterialApp(
-        title: 'Vibez',
-        debugShowCheckedModeBanner: false,
-        theme: new ThemeData(
-          primarySwatch: Colors.cyan,
-          primaryColor: const Color(0xFF00bcd4),
-          accentColor: const Color(0xFF00bcd4),
-          canvasColor: const Color(0xFF090909),
-          fontFamily: 'Roboto',
-        ),
-        home: new MyHomePage(),
-      ),
-    );
+      child: StreamProvider<List<UserData>>.value(
+        value: DatabaseService().userData,
+        child: new MaterialApp(
+            title: 'Vibez',
+            debugShowCheckedModeBanner: false,
+            theme: new ThemeData(
+              primarySwatch: Colors.cyan,
+              primaryColor: const Color(0xFF00bcd4),
+              accentColor: const Color(0xFF00bcd4),
+              canvasColor: const Color(0xFF090909),
+              fontFamily: 'Roboto',
+            ),
+            home: new MyHomePage(),
+          ),
+        ));
   }
 }
 
