@@ -89,8 +89,8 @@ class ShareWidget extends StatelessWidget {
                             ),
 
                             new Icon(
-                                Icons.verified_user,
-                                color: const Color(0xFF2cb3fb),
+                                userData.verified == true && userData.userType == "User" ? Icons.verified_user : userData.userType == "Artist" ? Icons.music_note : null,
+                                color:  userData.verified == true ? const Color(0xFF2cb3fb) : Colors.white,
                                 size: 23.0),
 
                           ]

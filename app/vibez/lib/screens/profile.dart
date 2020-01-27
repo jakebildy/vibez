@@ -56,18 +56,18 @@ class ProfileWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               new Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding:  const EdgeInsets.all(25.0),
               ),
               new Text(
-                userData.displayName,
+                userData.userType == "User" ? '' : userData.displayName,
                 style: new TextStyle(fontSize: 30.0,
                     color: Colors.white,
                     fontWeight: FontWeight.w800,
                     fontFamily: "Roboto"),
               ),
               new Icon(
-                  Icons.verified_user,
-                  color: const Color(0xFF2cb3fb),
+                  userData.verified == true && userData.userType == "Establishment" ? Icons.verified_user : userData.userType == "Artist" ? Icons.music_note : null,
+                  color:  userData.verified == true ? const Color(0xFF2cb3fb) : Colors.white,
                   size: 30.0),
               ]),
 
@@ -80,13 +80,16 @@ class ProfileWidget extends StatelessWidget {
                       padding: const EdgeInsets.all(20.0),
                     ),
                     new Text(
-                      userData.userType,
-                      style: new TextStyle(fontSize: 23.0,
+                      userData.userType == "User" ? userData.displayName : userData.userType,
+                      style: new TextStyle(fontSize:  userData.userType == "User" ? 30 : 23.0,
                           color: Colors.white,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: userData.userType == "User" ? FontWeight.w800 : FontWeight.w600,
                           fontFamily: "Roboto"),
                     ),
-
+                    new Icon(
+                        userData.verified == true && userData.userType == "User" ? Icons.verified_user : null,
+                        color:  userData.verified == true ? const Color(0xFF2cb3fb) : Colors.white,
+                        size: 30.0),
 
                   ])])]),
               new Padding(
