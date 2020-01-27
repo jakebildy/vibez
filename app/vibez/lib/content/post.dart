@@ -140,8 +140,10 @@ class _PostWidgetState extends State<PostWidget> {
                   children: <Widget>[
 
                     new Padding(
-                      padding: const EdgeInsets.all(110.0),
+                      padding: const EdgeInsets.all(100.0),
                     ),
+
+
                     new Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         mainAxisSize: MainAxisSize.max,
@@ -168,7 +170,7 @@ class _PostWidgetState extends State<PostWidget> {
                   children: <Widget>[
 
                     new Padding(
-                      padding: const EdgeInsets.all(110.0),
+                      padding: const EdgeInsets.all(100.0),
                     ),
 
                     AnimatedOpacity(
@@ -183,7 +185,7 @@ class _PostWidgetState extends State<PostWidget> {
                         size: 120.0),
                     ),
               new Padding(
-                padding: const EdgeInsets.all(60.0),
+                padding: const EdgeInsets.all(50.0),
               ),
 
               new Row(

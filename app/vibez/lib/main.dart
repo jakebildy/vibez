@@ -61,6 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   int _currentIndex = 0;
 
+  int _vibe = 0;
+
   PageController _pageController = PageController(initialPage: 0, keepPage: false);
 
   final List<Widget> _children = [
@@ -180,6 +182,21 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             actions: <Widget>[
               // action button
+
+              IconButton(
+                icon: _vibe == 0 ? Icon(Vibez.chill_icon) : _vibe == 1 ?  Icon(Vibez.fire_solid) : _vibe == 2 ?  Icon(Vibez.trippy_icon) : Icon(Icons.local_bar),
+                color:  Colors.white,
+                iconSize: 30,
+                onPressed: () {
+                  onVibeChanged();
+                },
+              ),
+
+
+              new Padding(
+                padding: const EdgeInsets.all(10.0),
+              ),
+
               IconButton(
                 icon: Icon(Icons.search),
                 iconSize: 34,
@@ -243,6 +260,15 @@ class _MyHomePageState extends State<MyHomePage> {
       _currentIndex = index;
     });
   }
+
+
+  void onVibeChanged() {
+
+    setState(() {
+      _vibe = (_vibe + 1) %  4;
+    });
+  }
+
 
   void onGemGiven() {
     setState(() {
