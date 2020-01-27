@@ -27,7 +27,7 @@ class DiscoverWidget extends StatelessWidget {
                       ),
 
                       new Icon(
-                          Vibez.vinyl_icon,
+                          Icons.music_note,
                           color: Colors.white,
                           size: 21.0),
 
