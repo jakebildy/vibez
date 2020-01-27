@@ -260,7 +260,7 @@ class SettingsWidget extends StatelessWidget {
               new Text(
                 "I am an...",
                 style: new TextStyle(fontSize: 20.0,
-                    color:  Colors.white,
+                    color:  Colors.grey,
                     fontWeight: FontWeight.w600,
                     fontFamily: "Roboto"),
               ),
@@ -283,7 +283,7 @@ class SettingsWidget extends StatelessWidget {
                             onPressed: () {},
                             borderSide: BorderSide(
                               color: Colors.pink, //Color of the border
-                              style: BorderStyle.solid, //Style of the border
+                              style: userData.userType == "Artist" ? BorderStyle.solid : BorderStyle.none, //Style of the border
                               width: 1.2, //width of the border
                             ),
                             child:  new Column(
@@ -335,7 +335,7 @@ class SettingsWidget extends StatelessWidget {
                             onPressed: () {},
                             borderSide: BorderSide(
                               color: Colors.white, //Color of the border
-                              style: BorderStyle.solid, //Style of the border
+                              style: userData.userType == "User" ? BorderStyle.solid : BorderStyle.none, //Style of the border
                               width: 1.2, //width of the border
                             ),
                             child:  new Column(
@@ -390,7 +390,7 @@ class SettingsWidget extends StatelessWidget {
                             },
                             borderSide: BorderSide(
                               color: Colors.green, //Color of the border
-                              style: BorderStyle.solid, //Style of the border
+                              style: userData.userType == "Establishment" ? BorderStyle.solid : BorderStyle.none, //Style of the border
                               width: 1.2, //width of the border
                             ),
                             child:  new Column(
@@ -426,7 +426,7 @@ class SettingsWidget extends StatelessWidget {
                   ]),
 
               new Padding(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(35.0),
               ),
 
               new Row(
