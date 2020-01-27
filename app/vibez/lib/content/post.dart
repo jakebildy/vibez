@@ -264,15 +264,9 @@ class _PostWidgetState extends State<PostWidget> {
                           fontFamily: "Roboto"),
                     ),
                     new Padding(
-                      padding: const EdgeInsets.symmetric(horizontal:25.0),
+                      padding: const EdgeInsets.symmetric(horizontal:50.0),
                     ),
-                    new Icon(
-                        Icons.save_alt,
-                        color: Colors.green,
-                        size: 30.0),
-                    new Padding(
-                      padding: const EdgeInsets.symmetric(horizontal:20.0),
-                    ),
+
                     new Icon(
                         Icons.send,
                         color: Colors.white,
