@@ -32,7 +32,7 @@ class DiscoverWidget extends StatelessWidget {
                           size: 21.0),
 
                       new Text(
-                        " Library",
+                        " Events",
                         style: new TextStyle(fontSize: 18.0,
                             color: Colors.white,
                             fontWeight: FontWeight.w800,

@@ -12,7 +12,7 @@ import 'package:vibez/util/wrapper.dart';
 import 'package:provider/provider.dart';
 import 'package:vibez/services/auth.dart';
 import 'package:vibez/models/user.dart';
-
+import  'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'models/userdata.dart';
 
 void main() {
@@ -95,7 +95,6 @@ class _MyHomePageState extends State<MyHomePage> {
               children: <Widget>[
                 _children[0],
                 _children[1],
-                _children[2],
                 _children[3],
                 _children[4],
               ])),
@@ -112,53 +111,39 @@ class _MyHomePageState extends State<MyHomePage> {
                   .textTheme
                   .copyWith(caption: new TextStyle(color: Colors.white))),
           // sets the inactive color of the `BottomNavigationBar`
-          child: new BottomNavigationBar(
-              type: BottomNavigationBarType.fixed,
-              showSelectedLabels: false,
-              showUnselectedLabels: false,
-              onTap: onTabTapped,
-              currentIndex: _currentIndex,
+          child: new BottomNavyBar(
+              backgroundColor: Colors.black,
+              onItemSelected: onTabTapped,
+              selectedIndex: _currentIndex,
               items: [
-                new BottomNavigationBarItem(
-                  icon: Icon(Icons.home, size: 38, color: _currentIndex == 0 ? Colors.orangeAccent : Colors.white,),
+                new BottomNavyBarItem(
+                  activeColor: Colors.green,
+                  icon: Icon(Icons.home, size: 34, color: _currentIndex == 0 ? Colors.greenAccent : Colors.greenAccent,),
 
                   title: new Text('Home'),
                 ),
 
-                new BottomNavigationBarItem(
-                  icon: Badge(
-                    badgeColor: Colors.pinkAccent,
-                    badgeContent: Text(
-                        '3', style: TextStyle(color: Colors.white)),
-                    child: _currentIndex == 1
-                        ? const Icon(Vibez.fire_solid, size: 33, color: Colors.orangeAccent)
-                        : const Icon(Vibez.fire_button, size: 33, color: Colors.white),
-                  ),
+                new BottomNavyBarItem(
+                  activeColor: Colors.orange,
+                  icon: _currentIndex == 1
+                        ? const Icon(Vibez.fire_solid, size: 32, color: Colors.orangeAccent)
+                        : const Icon(Vibez.fire_button, size: 32, color: Colors.orangeAccent),
                   title: new Text('Activity'),
                 ),
 
 
-                new BottomNavigationBarItem(
-                    icon: InkWell(
-                      child: Icon(
-                        Icons.add_circle,
-                        color: _currentIndex == 2 ? Colors.orangeAccent : Colors.white,
-                        // size: 40.0,
-                        size: 35,
-                      ),
-                    ),
-                    title: new Text('Share')
+
+                new BottomNavyBarItem(
+                  activeColor: Colors.pink,
+                  icon:  Icon(Icons.music_note, size: 34, color: _currentIndex == 2 ? Colors.pinkAccent : Colors.pinkAccent,),
+                  title: new Text('Events'),
                 ),
 
-                new BottomNavigationBarItem(
-                  icon:  Icon(Icons.music_note, size: 34, color: _currentIndex == 3 ? Colors.orangeAccent : Colors.white,),
-                  title: new Text('Library'),
-                ),
-
-                new BottomNavigationBarItem(
-                  icon: _currentIndex == 4
-                      ? const Icon(Icons.person, size: 34, color: Colors.orangeAccent)
-                      : const Icon(Icons.perm_identity, size: 34, color: Colors.white),
+                new BottomNavyBarItem(
+                  activeColor: Colors.blue,
+                  icon: _currentIndex == 3
+                      ? const Icon(Icons.person, size: 34, color: Colors.blueAccent)
+                      : const Icon(Icons.perm_identity, size: 34, color: Colors.blueAccent),
 
                   title: new Text('Me'),
 
