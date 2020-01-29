@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
     HomeWidget(),
     ActivityWidget(),
     ShareWidget(),
-    DiscoverWidget(),
+    ShareWidget(),
     Wrapper(),
   ];
 
@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
         bottomNavigationBar: new Theme(
           data: Theme.of(context).copyWith(
             // sets the background color of the `BottomNavigationBar`
-              canvasColor: Colors.black,
+              canvasColor: Color(0xff504f54),
               // sets the active color of the `BottomNavigationBar` if `Brightness` is light
               primaryColor: Colors.white,
               textTheme: Theme
@@ -117,8 +117,8 @@ class _MyHomePageState extends State<MyHomePage> {
               selectedIndex: _currentIndex,
               items: [
                 new BottomNavyBarItem(
-                  activeColor: Colors.green,
-                  icon: Icon(Icons.home, size: 34, color: _currentIndex == 0 ? Colors.greenAccent : Colors.greenAccent,),
+                  activeColor: Colors.pink,
+                  icon: Icon(Icons.home, size: 34, color: _currentIndex == 0 ? Colors.pinkAccent : Colors.pinkAccent,),
 
                   title: new Text('Home'),
                 ),
@@ -134,9 +134,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
                 new BottomNavyBarItem(
-                  activeColor: Colors.pink,
-                  icon:  Icon(Icons.music_note, size: 34, color: _currentIndex == 2 ? Colors.pinkAccent : Colors.pinkAccent,),
-                  title: new Text('Events'),
+                  activeColor: Colors.green,
+                  icon:  Icon(Icons.add_circle_outline, size: 34, color: _currentIndex == 2 ? Colors.greenAccent : Colors.greenAccent,),
+                  title: new Text('Share'),
                 ),
 
                 new BottomNavyBarItem(
@@ -168,14 +168,14 @@ class _MyHomePageState extends State<MyHomePage> {
             actions: <Widget>[
               // action button
 
-              IconButton(
-                icon: _vibe == 0 ? Icon(Vibez.chill_icon) : _vibe == 1 ?  Icon(Vibez.fire_solid) : _vibe == 2 ?  Icon(Vibez.trippy_icon) : Icon(Icons.local_bar),
-                color:  Colors.white,
-                iconSize: 30,
-                onPressed: () {
-                  onVibeChanged();
-                },
-              ),
+//              IconButton(
+//                icon: _vibe == 0 ? Icon(Vibez.chill_icon) : _vibe == 1 ?  Icon(Vibez.fire_solid) : _vibe == 2 ?  Icon(Vibez.trippy_icon) : Icon(Icons.local_bar),
+//                color:  Colors.white,
+//                iconSize: 30,
+//                onPressed: () {
+//                  onVibeChanged();
+//                },
+//              ),
 
 
               new Padding(

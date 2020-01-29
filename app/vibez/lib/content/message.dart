@@ -38,12 +38,23 @@ class MessageWidget extends StatelessWidget {
             padding: const EdgeInsets.all(5.0),
           ),
 
-          new Image.network(
-            imgUrl,
-            fit: BoxFit.fill,
-            width: 70.0,
-            height: 70.0,
-          ),
+          new OutlineButton(
+            onPressed: () {},
+            borderSide: BorderSide(
+              color: color, //Color of the border
+              style: BorderStyle.solid, //Style of the border
+              width: 2.5, //width of the border
+            ),
+            child:
+            new Image.network(
+              imgUrl,
+              fit: BoxFit.fill,
+              width: 55.0,
+              height: 55.0,
+            ),
+            shape: new CircleBorder(),
+
+            padding: const EdgeInsets.all(3.0),),
 
           new Padding(
             padding: const EdgeInsets.all(4.0),
@@ -62,17 +73,14 @@ class MessageWidget extends StatelessWidget {
                       new Text(
                         username,
                         style: new TextStyle(fontSize: 20.0,
-                            color: const Color(0xFFFFFFFF),
-                            fontWeight: FontWeight.w800,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
                             fontFamily: "Roboto"),
                       ),
                       new Padding(
                         padding: const EdgeInsets.all(2.0),
                       ),
-                      new Icon(
-                          Icons.verified_user,
-                          color: const Color(0xFF2cb3fb),
-                          size: 23.0),
+
 
                     ]),
                 new Padding(
@@ -80,9 +88,9 @@ class MessageWidget extends StatelessWidget {
                 ),
                 new Text(
                   description,
-                  style: new TextStyle(fontSize: 16.0,
+                  style: new TextStyle(fontSize: 14.0,
                       color: color,
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.w800,
                       fontFamily: "Roboto"),
                 ),
 

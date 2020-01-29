@@ -185,48 +185,80 @@ class _PostWidgetState extends State<PostWidget> {
                         size: 120.0),
                     ),
               new Padding(
-                padding: const EdgeInsets.all(50.0),
+                padding: const EdgeInsets.all(80.0),
               ),
 
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-
-                    new Text(
-                      songName,
-                      style: new TextStyle(fontSize: style==PostStyle.telegraph ? 25.0 : 60.0,
-                          color: Colors.white,
-                          fontFamily: style==PostStyle.telegraph ? "Flowers" : "Bombing"
+                  new Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end:Alignment.bottomCenter,
+                        colors: [
+                          // Colors are easy thanks to Flutter's Colors class.
+                          Color(0x01000000),
+                          Color(0xBB000000),
+                        ],// whitish to gray
                       ),
                     ),
+                    child:
+                    new Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          new Padding(
+                            padding: const EdgeInsets.all(5.0),
+                          ),
 
-                  ]),
-              new Padding(
-                padding: style==PostStyle.telegraph ? const EdgeInsets.all(14.0) : const EdgeInsets.all(0),
-              ),
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Text(
-                      artistName,
-                      style: new TextStyle(fontSize: style==PostStyle.telegraph ? 20.0 : 30,
-                          color: const Color(0xFFFFFFFF),
-                          fontFamily: style==PostStyle.telegraph ? "Flowers" : "Whoa"
-                      ),
-                    ),
+      new Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
 
-                  ]),
-                  ]),
+                          new Text(
+                            songName,
+                            style: new TextStyle(fontSize: style==PostStyle.telegraph ? 25.0 : 65.0,
+                                color: Colors.white,
+                                fontFamily: style==PostStyle.telegraph ? "Flowers" : "Bombing"
+                            ),
+                          ),
+
+                        ]),
+
+      new Padding(
+        padding: const EdgeInsets.all(13.0),
+      ),
+      ]),
+                  ),
+              ]),
+
+
 
                 ]),
               new Padding(
                 padding: const EdgeInsets.all(5.0),
               ),
+        new Container(
+            decoration: const BoxDecoration(
+                  border: Border(
+                    top: BorderSide(width: 1.0, color: Color(0xFF707070)),
+                    left: BorderSide(width: 1.0, color: Color(0xFF707070)),
+                    right: BorderSide(width: 1.0, color: Color(0xFF707070)),
+                    bottom: BorderSide(width: 1.0, color: Color(0xFF707070)),
+                  ),
+              ),
+            child:
+            new Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+            new Padding(
+            padding: const EdgeInsets.all(5.0),
+        ),
               new Row(
+
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -242,29 +274,40 @@ class _PostWidgetState extends State<PostWidget> {
 
                     new Text(
                       _liked ? " " + (int.parse(likeCount)+1).toString() + " " : " " + likeCount + " "  ,
-                      style: new TextStyle(fontSize:24.0,
+                      style: new TextStyle(fontSize:26.0,
                           color: const Color(0xFFFFFFFF),
                           fontWeight: FontWeight.w600,
-                          fontFamily: "Roboto"),
+                          fontFamily: "RobotoCondensed"),
                     ),
+
 
                     new Padding(
                       padding: const EdgeInsets.symmetric(horizontal:10.0),
                     ),
-                    new Icon(
-                        Icons.autorenew,
-                        color: Colors.pinkAccent,
-                        size: 30.0),
+
+                    new Image.network(
+                      'https://i.imgur.com/7e317PJ.png',
+                      fit: BoxFit.fitWidth,
+                      width: 30.0,
+                      height: 30.0,
+                    ),
 
                     new Text(
-                     "2.7k"  ,
-                      style: new TextStyle(fontSize:24.0,
-                          color: const Color(0xFFFFFFFF),
+                      " 1.7k"  ,
+                      style: new TextStyle(fontSize:26.0,
+                          color: Colors.white,
                           fontWeight: FontWeight.w600,
-                          fontFamily: "Roboto"),
+                          fontFamily: "RobotoCondensed"),
                     ),
+
                     new Padding(
-                      padding: const EdgeInsets.symmetric(horizontal:50.0),
+                      padding: const EdgeInsets.symmetric(horizontal:20.0),
+                    ),
+
+
+
+                    new Padding(
+                      padding: const EdgeInsets.symmetric(horizontal:20.0),
                     ),
 
                     new Icon(
@@ -274,7 +317,10 @@ class _PostWidgetState extends State<PostWidget> {
                   ]
 
               ),
-
+            new Padding(
+              padding: const EdgeInsets.symmetric(vertical:5.0),
+            ),]),
+        )
             ]
 
         ),

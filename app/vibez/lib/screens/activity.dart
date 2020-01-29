@@ -30,13 +30,13 @@ class ActivityWidget extends StatelessWidget {
                         new Icon(
                             Vibez.fire_solid,
                             color: Colors.white,
-                            size: 21.0),
+                            size: 24.0),
 
                         new Text(
                           " Activity",
-                          style: new TextStyle(fontSize: 18.0,
+                          style: new TextStyle(fontSize: 24.0,
                               color: Colors.white,
-                              fontWeight: FontWeight.w800,
+                              fontWeight: FontWeight.w600,
                               fontFamily: "Roboto"),
                         ),
 
@@ -52,6 +52,9 @@ class ActivityWidget extends StatelessWidget {
 
 
               ),
+              new Padding(
+                padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 90),
+              ),
 
               new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -65,7 +68,7 @@ class ActivityWidget extends StatelessWidget {
                     ),
 
 
-                      new BroadcastWidget(username: "Harambe", color: Colors.yellowAccent, imgUrl: 'https://i.imgur.com/9lYUiGL.png', location: "Cincinnati, OH", song: "Wassup"),
+                      new BroadcastWidget(username: "Harambe", color: Colors.green, imgUrl: 'https://i.imgur.com/9lYUiGL.png', location: "Cincinnati, OH", song: "Wassup"),
                       new BroadcastWidget(username: "Snoop Dogg", color: Colors.green, imgUrl: 'https://i.imgur.com/zRbQAba.png', location: "Los Angeles, CA", song: "Mask Off"),
 
                   ]
@@ -87,7 +90,7 @@ class ActivityWidget extends StatelessWidget {
                   padding: const EdgeInsets.all(5.0),
                 ),
 
-                new MessageWidget(username: "Yoda", description: "Yoda liked your song", icon:  Icons.music_note, color:  Colors.green, timestamp: "Yesterday", imgUrl: 'https://i.imgur.com/zSeMBiW.png',)
+                new MessageWidget(username: "Yoda", description: "Yoda liked your song", icon:  Icons.music_note, color:  Colors.grey, timestamp: "Yesterday", imgUrl: 'https://i.imgur.com/zSeMBiW.png',)
 
 
 

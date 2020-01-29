@@ -79,6 +79,9 @@ flutter:
       - family: Flowers
         fonts:
           - asset: fonts/Flowers Kingdom.ttf
+      - family: RobotoCondensed
+        fonts:
+          - asset: fonts/RobotoCondensed-Regular.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

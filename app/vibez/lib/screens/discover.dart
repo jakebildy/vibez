@@ -15,6 +15,10 @@ class DiscoverWidget extends StatelessWidget {
             new Card(key: null,
                 color: const Color(0xFF090909),
                 child:
+                    new Stack(
+                      children: <Widget>[
+
+
                 new Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     mainAxisSize: MainAxisSize.max,
@@ -45,9 +49,90 @@ class DiscoverWidget extends StatelessWidget {
 
                     ]
 
-                )),
+                ),
 
-            new SongWidget(name: "Stick Talk", author: "Future", icon: Icons.play_circle_outline, color: Colors.pinkAccent, album: "DS2 (Deluxe)", imgUrl: 'https://images.complex.com/complex/image/upload/c_limit,dpr_auto,q_90,w_720/fl_lossy,pg_1/Screen_Shot_2015-07-17_at_2.45.32_PM_h5abhl.jpg',),
+
+                      ]),
+
+
+),
+
+
+        new Card(key: null,
+            color: new Color(0xff4a0023),
+            elevation: 20,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(40)),
+            child:
+            new Column(
+                children: <Widget> [
+                  new Text("Hello",
+                  style: new TextStyle(fontSize: 30.0,
+                    color: Colors.pink,
+                    fontWeight: FontWeight.w800,
+                    fontFamily: "Roboto"),),
+                  new Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 46.0, horizontal: 90),
+                  ),
+
+                ])),
+
+            new Card(key: null,
+                color: new Color(0xff663500),
+                elevation: 20,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40)),
+                child:
+                new Column(
+                    children: <Widget> [
+                      new Text("Hello",
+                        style: new TextStyle(fontSize: 30.0,
+                            color: Colors.orange,
+                            fontWeight: FontWeight.w800,
+                            fontFamily: "Roboto"),),
+                      new Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 46.0, horizontal: 90),
+                      ),
+
+                    ])),
+
+            new Card(key: null,
+                color: new Color(0xff006644),
+                elevation: 20,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40)),
+                child:
+                new Column(
+                    children: <Widget> [
+                      new Text("Hello",
+                        style: new TextStyle(fontSize: 30.0,
+                            color: Colors.green,
+                            fontWeight: FontWeight.w800,
+                            fontFamily: "Roboto"),),
+                      new Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 46.0, horizontal: 90),
+                      ),
+
+                    ])),
+
+            new Card(key: null,
+                color: new Color(0xff003b66),
+                elevation: 20,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40)),
+                child:
+                new Column(
+                    children: <Widget> [
+                      new Text("Hello",
+                        style: new TextStyle(fontSize: 30.0,
+                            color: Colors.blue,
+                            fontWeight: FontWeight.w800,
+                            fontFamily: "Roboto"),),
+                      new Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 46.0, horizontal: 90),
+                      ),
+
+                    ]))
 
 
             ]));
